@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Deri Tri Hartono — Aspiring Vibe Coder &amp; AI Enthusiast</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              sage: '#6c756b',
+              slate: '#93acb5',
+              sky: '#96c5f7',
+              ice: '#a9d3ff',
+              snow: '#f2f4ff',
+              ink: '#1e2421',
+              darkbg: '#0f1417',
+              darkcard: '#171f24',
+            },
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease-out;
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body class="bg-brand-snow text-brand-ink dark:bg-brand-darkbg dark:text-brand-snow font-sans antialiased transition-colors duration-300 selection:bg-brand-sky/50 selection:text-brand-ink">
+
+  <!-- Sticky Navigation Bar -->
+  <header class="sticky top-0 z-50 border-b border-brand-slate/30 bg-brand-snow/85 dark:border-brand-slate/20 dark:bg-brand-darkbg/85 backdrop-blur-md transition-colors duration-300">
+    <div class="mx-auto flex max-w-5xl items-center justify-between gap-4 px-6 py-4">
+      <a href="#home" class="text-lg font-extrabold tracking-tight text-brand-ink dark:text-white">
+        Deri<span class="text-brand-sage dark:text-brand-sky">.dev</span>
+      </a>
+
+      <nav class="hidden gap-6 text-sm font-medium text-brand-sage dark:text-brand-slate md:flex">
+        <a href="#about" data-i18n="nav_about" class="transition hover:text-brand-ink dark:hover:text-white">Tentang</a>
+        <a href="#experience" data-i18n="nav_exp" class="transition hover:text-brand-ink dark:hover:text-white">Pengalaman</a>
+        <a href="#skills" data-i18n="nav_skills" class="transition hover:text-brand-ink dark:hover:text-white">Kemampuan</a>
+        <a href="#projects" data-i18n="nav_projects" class="transition hover:text-brand-ink dark:hover:text-white">Proyek</a>
+        <a href="#contact" data-i18n="nav_contact" class="transition hover:text-brand-ink dark:hover:text-white">Kontak</a>
+      </nav>
+
+      <!-- Controls: Language (ID/EN), Theme (Light/Dark), & CTA -->
+      <div class="flex items-center gap-2 sm:gap-3">
+        <!-- Language Toggle -->
+        <div class="inline-flex rounded-lg border border-brand-slate/40 bg-white/80 p-0.5 dark:border-brand-slate/25 dark:bg-brand-darkcard">
+          <button
+            id="btn-lang-id"
+            onclick="setLanguage('id')"
+            class="rounded-md px-2.5 py-1 text-xs font-bold transition"
+          >
+            ID
+          </button>
+          <button
+            id="btn-lang-en"
+            onclick="setLanguage('en')"
+            class="rounded-md px-2.5 py-1 text-xs font-bold transition"
+          >
+            EN
+          </button>
+        </div>
+
+        <!-- Theme Toggle Button -->
+        <button
+          id="theme-toggle"
+          onclick="toggleTheme()"
+          aria-label="Toggle Dark or Light Mode"
+          class="flex h-8 w-8 items-center justify-center rounded-lg border border-brand-slate/40 bg-white/80 text-brand-ink transition hover:bg-brand-ice/50 dark:border-brand-slate/25 dark:bg-brand-darkcard dark:text-brand-ice dark:hover:bg-brand-slate/20"
+        >
+          <!-- Sun Icon (shown in Dark Mode) -->
+          <svg id="icon-sun" class="hidden h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+          </svg>
+          <!-- Moon Icon (shown in Light Mode) -->
+          <svg id="icon-moon" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+          </svg>
+        </button>
+
+        <a
+          href="https://wa.me/62895600748096?text=Halo%20Deri,%20saya%20tertarik%20setelah%20melihat%20portofolio%20Anda."
+          target="_blank"
+          rel="noopener noreferrer"
+          data-i18n="nav_cta"
+          class="hidden rounded-lg bg-brand-sky px-3.5 py-1.5 text-xs font-bold text-brand-ink shadow-sm transition hover:bg-brand-ice sm:inline-block"
+        >
+          Hubungi Saya
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="relative overflow-hidden border-b border-brand-slate/30 dark:border-brand-slate/20 py-20 md:py-28">
+    <div class="pointer-events-none absolute -top-24 left-1/2 h-80 w-80 -translate-x-1/2 rounded-full bg-brand-ice/50 dark:bg-brand-sky/10 blur-3xl"></div>
+
+    <div class="mx-auto max-w-5xl px-6">
+      <div class="max-w-3xl">
+        <div class="mb-5 inline-flex items-center gap-2 rounded-full border border-brand-slate/40 bg-white/80 dark:border-brand-slate/25 dark:bg-brand-darkcard px-3.5 py-1.5 text-xs font-semibold text-brand-sage dark:text-brand-ice shadow-sm">
+          <span class="h-2 w-2 rounded-full bg-brand-sky animate-pulse"></span>
+          <span data-i18n="hero_badge">Open for Opportunities &amp; Collaboration</span>
+        </div>
+
+        <h1 class="text-4xl font-extrabold tracking-tight text-brand-ink dark:text-white sm:text-5xl md:text-6xl">
+          <span data-i18n="hero_greeting">Hello, nama saya</span> <br />
+          <span class="text-brand-sage dark:text-brand-sky">
+            Deri Tri Hartono
+          </span>
+        </h1>
+
+        <p data-i18n="hero_desc" class="mt-6 text-lg leading-relaxed text-brand-sage dark:text-brand-slate sm:text-xl">
+          Saya adalah <strong class="font-semibold text-brand-ink dark:text-white">Aspiring Vibe Coder</strong> dan
+          <strong class="font-semibold text-brand-ink dark:text-white">AI Enthusiast</strong> yang berfokus merancang
+          serta membangun website modern maupun solusi digital yang praktis.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About & Education Section -->
+  <section id="about" class="border-b border-brand-slate/30 dark:border-brand-slate/20 py-16 md:py-20 reveal">
+    <div class="mx-auto max-w-5xl px-6">
+      <div class="grid gap-10 md:grid-cols-3">
+        <div>
+          <h2 data-i18n="about_kicker" class="text-sm font-bold uppercase tracking-widest text-brand-sage dark:text-brand-sky">Tentang Saya</h2>
+          <p data-i18n="about_title" class="mt-2 text-2xl font-bold text-brand-ink dark:text-white">Latar Belakang &amp; Pendidikan</p>
+        </div>
+
+        <div class="space-y-6 md:col-span-2">
+          <div class="space-y-4 text-brand-sage dark:text-brand-slate leading-relaxed">
+            <p data-i18n="about_p1">
+              Memiliki latar belakang pengalaman kerja di bidang operasional, layanan pelanggan, kasir, dan
+              administrasi gudang yang melatih ketelitian data, kecepatan kerja, serta kedisiplinan terhadap
+              prosedur.
+            </p>
+            <p data-i18n="about_p2">
+              Saat ini saya aktif mengembangkan kemampuan di dunia <span class="text-brand-ink dark:text-white font-semibold">vibe coding</span>,
+              perancangan antarmuka web (UI/UX), serta mengikuti perkembangan tools AI untuk membantu
+              pembuatan <span class="text-brand-ink dark:text-white font-semibold">landing page</span> dan efisiensi alur kerja digital.
+            </p>
+          </div>
+
+          <!-- Pendidikan Terakhir -->
+          <div class="rounded-2xl border border-brand-slate/40 bg-white/80 dark:border-brand-slate/25 dark:bg-brand-darkcard p-5 shadow-sm">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <span data-i18n="edu_label" class="text-xs font-bold uppercase tracking-wider text-brand-sage dark:text-brand-sky">Pendidikan Terakhir</span>
+              <span class="rounded-full bg-brand-ice/60 dark:bg-brand-sky/20 px-3 py-0.5 text-xs font-semibold text-brand-ink dark:text-brand-ice">
+                2012 - 2015
+              </span>
+            </div>
+            <h3 class="mt-2 text-base font-bold text-brand-ink dark:text-white">SMA Baptis Cengkareng Indah</h3>
+            <p data-i18n="edu_sub" class="mt-1 text-xs text-brand-sage dark:text-brand-slate">Sekolah Menengah Atas</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience" class="border-b border-brand-slate/30 dark:border-brand-slate/20 py-16 md:py-20 reveal">
+    <div class="mx-auto max-w-5xl px-6">
+      <div class="mb-12">
+        <h2 data-i18n="exp_kicker" class="text-sm font-bold uppercase tracking-widest text-brand-sage dark:text-brand-sky">Riwayat Karier</h2>
+        <p data-i18n="exp_title" class="mt-2 text-2xl font-bold text-brand-ink dark:text-white sm:text-3xl">Pengalaman Kerja Sebelumnya</p>
+      </div>
+
+      <div class="grid gap-6 md:grid-cols-2">
+        <!-- Card 1 -->
+        <div class="rounded-2xl border border-brand-slate/40 bg-white/80 dark:border-brand-slate/25 dark:bg-brand-darkcard p-6 shadow-sm transition hover:border-brand-sky">
+          <span data-i18n="exp1_tag" class="inline-block rounded-md bg-brand-ice/70 dark:bg-brand-sky/20 px-2.5 py-1 text-xs font-semibold text-brand-ink dark:text-brand-ice">
+            Logistik &amp; Administrasi
+          </span>
+          <h3 class="mt-3 text-lg font-bold text-brand-ink dark:text-white">Warehouse Admin</h3>
+          <p class="text-sm font-medium text-brand-sage dark:text-brand-slate">PT IDexpress Service Solution</p>
+          <p data-i18n="exp1_desc" class="mt-3 text-sm leading-relaxed text-brand-sage dark:text-brand-slate">
+            Mengelola pencatatan data keluar-masuk paket/barang, rekapitulasi administrasi operasional
+            gudang, serta memastikan akurasi data pengiriman.
+          </p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="rounded-2xl border border-brand-slate/40 bg-white/80 dark:border-brand-slate/25 dark:bg-brand-darkcard p-6 shadow-sm transition hover:border-brand-sky">
+          <span data-i18n="exp2_tag" class="inline-block rounded-md bg-brand-sky/50 dark:bg-brand-sky/20 px-2.5 py-1 text-xs font-semibold text-brand-ink dark:text-brand-ice">
+            Hospitality &amp; Transaksi
+          </span>
+          <h3 data-i18n="exp2_role" class="mt-3 text-lg font-bold text-brand-ink dark:text-white">Kasir</h3>
+          <p class="text-sm font-medium text-brand-sage dark:text-brand-slate">Foxy Spa PIK Elang Laut</p>
+          <p data-i18n="exp2_desc" class="mt-3 text-sm leading-relaxed text-brand-sage dark:text-brand-slate">
+            Menangani proses pembayaran pelanggan, pencatatan laporan transaksi harian, serta menjaga
+            kerapian administrasi kas dan pelayanan front-desk.
+          </p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="rounded-2xl border border-brand-slate/40 bg-white/80 dark:border-brand-slate/25 dark:bg-brand-darkcard p-6 shadow-sm transition hover:border-brand-sky">
+          <span data-i18n="exp3_tag" class="inline-block rounded-md bg-brand-slate/30 dark:bg-brand-slate/20 px-2.5 py-1 text-xs font-semibold text-brand-ink dark:text-brand-ice">
+            F&amp;B Service &amp; POS
+          </span>
+          <h3 data-i18n="exp3_role" class="mt-3 text-lg font-bold text-brand-ink dark:text-white">Kasir</h3>
+          <p class="text-sm font-medium text-brand-sage dark:text-brand-slate">The Holy Crab &amp; Holy Smokes</p>
+          <p data-i18n="exp3_desc" class="mt-3 text-sm leading-relaxed text-brand-sage dark:text-brand-slate">
+            Mengoperasikan sistem kasir (POS) di lingkungan restoran dengan ritme cepat, memastikan
+            ketepatan tagihan, dan koordinasi layanan pelanggan.
+          </p>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="rounded-2xl border border-brand-slate/40 bg-white/80 dark:border-brand-slate/25 dark:bg-brand-darkcard p-6 shadow-sm transition hover:border-brand-sky">
+          <span data-i18n="exp4_tag" class="inline-block rounded-md bg-brand-ice/70 dark:bg-brand-sky/20 px-2.5 py-1 text-xs font-semibold text-brand-ink dark:text-brand-ice">
+            Kitchen Operations
+          </span>
+          <h3 class="mt-3 text-lg font-bold text-brand-ink dark:text-white">Dishwasher</h3>
+          <p class="text-sm font-medium text-brand-sage dark:text-brand-slate">Song Fa Bak Kut Teh</p>
+          <p data-i18n="exp4_desc" class="mt-3 text-sm leading-relaxed text-brand-sage dark:text-brand-slate">
+            Menjaga kebersihan, sanitasi peralatan dapur dan makan, serta mendukung kelancaran alur
+            operasional tim dapur sesuai standar kebersihan restoran.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="border-b border-brand-slate/30 dark:border-brand-slate/20 py-16 md:py-20 reveal">
+    <div class="mx-auto max-w-5xl px-6">
+      <div class="mb-10">
+        <h2 data-i18n="skills_kicker" class="text-sm font-bold uppercase tracking-widest text-brand-sage dark:text-brand-sky">Keahlian</h2>
+        <p data-i18n="skills_title" class="mt-2 text-2xl font-bold text-brand-ink dark:text-white sm:text-3xl">Kemampuan &amp; Eksplorasi Tools</p>
+      </div>
+
+      <div class="grid gap-6 md:grid-cols-2">
+        <!-- Office & Data -->
+        <div class="rounded-2xl border border-brand-slate/40 bg-white/80 dark:border-brand-slate/25 dark:bg-brand-darkcard p-6 shadow-sm">
+          <h3 data-i18n="skills_cat1" class="text-base font-bold text-brand-ink dark:text-white">Administrasi &amp; Perkantoran</h3>
+          <p data-i18n="skills_cat1_sub" class="mt-1 text-xs text-brand-sage dark:text-brand-slate">Pengolahan dokumen, tabel data, dan rekap laporan</p>
+          <div class="mt-5 flex flex-wrap gap-2.5">
+            <span class="rounded-lg border border-brand-slate/40 bg-brand-snow dark:border-brand-slate/25 dark:bg-brand-darkbg px-3.5 py-2 text-sm font-medium text-brand-ink dark:text-brand-snow">
+              Microsoft Word <span class="text-xs font-semibold text-brand-sage dark:text-brand-sky">(Basic)</span>
+            </span>
+            <span class="rounded-lg border border-brand-slate/40 bg-brand-snow dark:border-brand-slate/25 dark:bg-brand-darkbg px-3.5 py-2 text-sm font-medium text-brand-ink dark:text-brand-snow">
+              Microsoft Excel <span class="text-xs font-semibold text-brand-sage dark:text-brand-sky">(Basic)</span>
+            </span>
+            <span class="rounded-lg border border-brand-slate/40 bg-brand-snow dark:border-brand-slate/25 dark:bg-brand-darkbg px-3.5 py-2 text-sm font-medium text-brand-ink dark:text-brand-snow">
+              Google Spreadsheet <span class="text-xs font-semibold text-brand-sage dark:text-brand-sky">(Basic)</span>
+            </span>
+          </div>
+        </div>
+
+        <!-- Digital & Vibe Coding -->
+        <div class="rounded-2xl border border-brand-slate/40 bg-white/80 dark:border-brand-slate/25 dark:bg-brand-darkcard p-6 shadow-sm">
+          <h3 data-i18n="skills_cat2" class="text-base font-bold text-brand-ink dark:text-white">Web &amp; AI Exploration</h3>
+          <p data-i18n="skills_cat2_sub" class="mt-1 text-xs text-brand-sage dark:text-brand-slate">Bidang yang sedang dipelajari dan dipraktikkan</p>
+          <div class="mt-5 flex flex-wrap gap-2.5">
+            <span class="rounded-lg border border-brand-sky bg-brand-ice/50 dark:bg-brand-sky/20 px-3.5 py-2 text-sm font-semibold text-brand-ink dark:text-brand-ice">
+              Vibe Coding &amp; AI Tools
+            </span>
+            <span class="rounded-lg border border-brand-slate/40 bg-brand-snow dark:border-brand-slate/25 dark:bg-brand-darkbg px-3.5 py-2 text-sm font-medium text-brand-ink dark:text-brand-snow">
+              HTML &amp; CSS
+            </span>
+            <span class="rounded-lg border border-brand-slate/40 bg-brand-snow dark:border-brand-slate/25 dark:bg-brand-darkbg px-3.5 py-2 text-sm font-medium text-brand-ink dark:text-brand-snow">
+              Figma UI/UX
+            </span>
+            <span class="rounded-lg border border-brand-slate/40 bg-brand-snow dark:border-brand-slate/25 dark:bg-brand-darkbg px-3.5 py-2 text-sm font-medium text-brand-ink dark:text-brand-snow">
+              GitHub Pages
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="border-b border-brand-slate/30 dark:border-brand-slate/20 py-16 md:py-20 reveal">
+    <div class="mx-auto max-w-5xl px-6">
+      <div class="mb-10 flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
+        <div>
+          <h2 data-i18n="proj_kicker" class="text-sm font-bold uppercase tracking-widest text-brand-sage dark:text-brand-sky">Portofolio Web</h2>
+          <p data-i18n="proj_title" class="mt-2 text-2xl font-bold text-brand-ink dark:text-white sm:text-3xl">Proyek &amp; Eksperimen</p>
+        </div>
+        <p data-i18n="proj_note" class="text-sm text-brand-sage dark:text-brand-slate">Diperbarui secara bertahap seiring proyek selesai</p>
+      </div>
+
+      <div class="grid gap-6 md:grid-cols-2">
+        <!-- Project 1 -->
+        <div class="flex flex-col justify-between rounded-2xl border border-brand-slate/40 bg-white/80 dark:border-brand-slate/25 dark:bg-brand-darkcard p-6 shadow-sm">
+          <div>
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold uppercase tracking-wider text-brand-sage dark:text-brand-sky">Landing Page</span>
+              <span class="rounded-full bg-brand-ice dark:bg-brand-sky/20 px-2.5 py-0.5 text-xs font-semibold text-brand-ink dark:text-brand-ice">Live</span>
+            </div>
+            <h3 class="mt-3 text-lg font-bold text-brand-ink dark:text-white">Promotional Landing Page — CBN Fiber</h3>
+            <p data-i18n="proj1_desc" class="mt-2 text-sm leading-relaxed text-brand-sage dark:text-brand-slate">
+              Halaman penawaran layanan internet fiber dengan informasi paket, area cakupan, dan tombol
+              konversi langsung ke WhatsApp sales.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-brand-slate/30 dark:border-brand-slate/20 flex items-center justify-between text-xs text-brand-sage dark:text-brand-slate">
+            <span>HTML • CSS • GitHub Pages</span>
+            <a
+              href="https://putput-fr99.github.io/Putri-CBN/"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-i18n="proj1_link"
+              class="font-bold text-brand-ink dark:text-brand-sky hover:underline"
+            >
+              Lihat Live &rarr;
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="flex flex-col justify-between rounded-2xl border border-brand-slate/40 bg-white/80 dark:border-brand-slate/25 dark:bg-brand-darkcard p-6 shadow-sm">
+          <div>
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold uppercase tracking-wider text-brand-sage dark:text-brand-sky">UI/UX &amp; Web</span>
+              <span class="rounded-full bg-brand-slate/30 dark:bg-brand-slate/20 px-2.5 py-0.5 text-xs font-semibold text-brand-ink dark:text-brand-ice">In Progress</span>
+            </div>
+            <h3 data-i18n="proj2_title" class="mt-3 text-lg font-bold text-brand-ink dark:text-white">Company Profile Ekspor-Impor</h3>
+            <p data-i18n="proj2_desc" class="mt-2 text-sm leading-relaxed text-brand-sage dark:text-brand-slate">
+              Perancangan landing page perusahaan ekspor-impor yang mencakup layanan correspondence,
+              payment, logistic, customs clearance, dan regulation handling.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-brand-slate/30 dark:border-brand-slate/20 flex items-center justify-between text-xs text-brand-sage dark:text-brand-slate">
+            <span>Figma • SDLC • Parallax Concept</span>
+            <span data-i18n="proj2_status" class="font-medium">Tahap Desain &amp; PRD</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section: Email + Barcode WhatsApp Saja -->
+  <section id="contact" class="py-16 md:py-24 reveal">
+    <div class="mx-auto max-w-5xl px-6">
+      <div class="rounded-3xl border border-brand-slate/40 bg-gradient-to-br from-white via-brand-snow to-brand-ice/40 dark:border-brand-slate/25 dark:from-brand-darkcard dark:via-brand-darkcard dark:to-brand-darkbg p-8 shadow-sm md:p-12">
+        <div class="grid items-center gap-8 md:grid-cols-3">
+          <div class="md:col-span-2">
+            <h2 data-i18n="contact_kicker" class="text-sm font-bold uppercase tracking-widest text-brand-sage dark:text-brand-sky">Kontak</h2>
+            <p data-i18n="contact_title" class="mt-2 text-2xl font-bold text-brand-ink dark:text-white sm:text-3xl">Mari Terhubung</p>
+            <p data-i18n="contact_desc" class="mt-3 text-brand-sage dark:text-brand-slate leading-relaxed">
+              Silakan pindai kode QR WhatsApp di samping untuk terhubung langsung, atau kirim email untuk
+              diskusi pekerjaan maupun kolaborasi proyek digital.
+            </p>
+
+            <!-- Email Box -->
+            <div class="mt-6 max-w-md">
+              <div class="flex items-center justify-between rounded-2xl border border-brand-slate/40 bg-white dark:border-brand-slate/25 dark:bg-brand-darkbg p-4">
+                <div class="min-w-0 pr-3">
+                  <p class="text-xs font-medium text-brand-sage dark:text-brand-slate">Email</p>
+                  <a
+                    href="mailto:derrytrihartono@gmail.com"
+                    class="mt-1 block truncate text-sm font-bold text-brand-ink dark:text-white hover:underline"
+                  >
+                    derrytrihartono@gmail.com
+                  </a>
+                </div>
+                <button
+                  id="copy-email-btn"
+                  onclick="copyText('derrytrihartono@gmail.com', this)"
+                  data-i18n="btn_copy"
+                  class="shrink-0 rounded-lg bg-brand-ice/70 dark:bg-brand-sky/20 px-3.5 py-2 text-xs font-semibold text-brand-ink dark:text-brand-ice transition hover:bg-brand-sky dark:hover:bg-brand-sky/30"
+                >
+                  Salin
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Barcode / QR Code WhatsApp -->
+          <div class="flex flex-col items-center justify-center rounded-2xl border border-brand-slate/40 bg-white dark:border-brand-slate/25 dark:bg-brand-darkbg p-5 text-center shadow-sm">
+            <a
+              href="https://wa.me/62895600748096"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Klik atau Scan QR WhatsApp"
+              class="overflow-hidden rounded-xl border border-brand-slate/20 bg-white p-2 transition hover:scale-[1.02]"
+            >
+              <img
+                src="qr-wa.png"
+                onerror="this.onerror=null;this.src='https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https://wa.me/62895600748096';"
+                alt="QR Code WhatsApp Deri Tri Hartono"
+                class="h-40 w-40 object-contain"
+              />
+            </a>
+            <p data-i18n="qr_title" class="mt-3 text-xs font-bold text-brand-ink dark:text-white">Scan QR WhatsApp</p>
+            <p data-i18n="qr_sub" class="mt-0.5 text-[11px] text-brand-sage dark:text-brand-slate">Arahkan kamera HP untuk chat langsung</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-brand-slate/30 dark:border-brand-slate/20 py-8 text-center text-xs text-brand-sage dark:text-brand-slate">
+    <div class="mx-auto max-w-5xl px-6">
+      <p data-i18n="footer_text">&copy; 2026 Deri Tri Hartono. Dibuat dengan semangat eksplorasi AI &amp; Vibe Coding.</p>
+    </div>
+  </footer>
+
+  <!-- Script: Scroll Reveal, Copy Email, Theme Toggle, & Language Switcher (ID / EN) -->
+  <script>
+    // 1. Scroll Reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const revealOnScroll = () => {
+      const windowHeight = window.innerHeight;
+      reveals.forEach((el) => {
+        const elementTop = el.getBoundingClientRect().top;
+        if (elementTop < windowHeight - 80) {
+          el.classList.add('active');
+        }
+      });
+    };
+    window.addEventListener('scroll', revealOnScroll);
+    revealOnScroll();
+
+    // 2. Theme Toggle (Light / Dark)
+    const htmlEl = document.documentElement;
+    const iconSun = document.getElementById('icon-sun');
+    const iconMoon = document.getElementById('icon-moon');
+
+    function applyTheme(theme) {
+      if (theme === 'dark') {
+        htmlEl.classList.add('dark');
+        iconSun.classList.remove('hidden');
+        iconMoon.classList.add('hidden');
+      } else {
+        htmlEl.classList.remove('dark');
+        iconSun.classList.add('hidden');
+        iconMoon.classList.remove('hidden');
+      }
+      localStorage.setItem('portfolio_theme', theme);
+    }
+
+    function toggleTheme() {
+      const isDark = htmlEl.classList.contains('dark');
+      applyTheme(isDark ? 'light' : 'dark');
+    }
+
+    const savedTheme = localStorage.getItem('portfolio_theme') || 'light';
+    applyTheme(savedTheme);
+
+    // 3. Language Dictionary (ID / EN)
+    const translations = {
+      id: {
+        nav_about: 'Tentang',
+        nav_exp: 'Pengalaman',
+        nav_skills: 'Kemampuan',
+        nav_projects: 'Proyek',
+        nav_contact: 'Kontak',
+        nav_cta: 'Hubungi Saya',
+        hero_badge: 'Open for Opportunities & Collaboration',
+        hero_greeting: 'Hello, nama saya',
+        hero_desc:
+          'Saya adalah <strong class="font-semibold text-brand-ink dark:text-white">Aspiring Vibe Coder</strong> dan <strong class="font-semibold text-brand-ink dark:text-white">AI Enthusiast</strong> yang berfokus merancang serta membangun website modern maupun solusi digital yang praktis.',
+        about_kicker: 'Tentang Saya',
+        about_title: 'Latar Belakang & Pendidikan',
+        about_p1:
+          'Memiliki latar belakang pengalaman kerja di bidang operasional, layanan pelanggan, kasir, dan administrasi gudang yang melatih ketelitian data, kecepatan kerja, serta kedisiplinan terhadap prosedur.',
+        about_p2:
+          'Saat ini saya aktif mengembangkan kemampuan di dunia <span class="text-brand-ink dark:text-white font-semibold">vibe coding</span>, perancangan antarmuka web (UI/UX), serta mengikuti perkembangan tools AI untuk membantu pembuatan <span class="text-brand-ink dark:text-white font-semibold">landing page</span> dan efisiensi alur kerja digital.',
+        edu_label: 'Pendidikan Terakhir',
+        edu_sub: 'Sekolah Menengah Atas',
+        exp_kicker: 'Riwayat Karier',
+        exp_title: 'Pengalaman Kerja Sebelumnya',
+        exp1_tag: 'Logistik & Administrasi',
+        exp1_desc:
+          'Mengelola pencatatan data keluar-masuk paket/barang, rekapitulasi administrasi operasional gudang, serta memastikan akurasi data pengiriman.',
+        exp2_tag: 'Hospitality & Transaksi',
+        exp2_role: 'Kasir',
+        exp2_desc:
+          'Menangani proses pembayaran pelanggan, pencatatan laporan transaksi harian, serta menjaga kerapian administrasi kas dan pelayanan front-desk.',
+        exp3_tag: 'F&B Service & POS',
+        exp3_role: 'Kasir',
+        exp3_desc:
+          'Mengoperasikan sistem kasir (POS) di lingkungan restoran dengan ritme cepat, memastikan ketepatan tagihan, dan koordinasi layanan pelanggan.',
+        exp4_tag: 'Kitchen Operations',
+        exp4_desc:
+          'Menjaga kebersihan, sanitasi peralatan dapur dan makan, serta mendukung kelancaran alur operasional tim dapur sesuai standar kebersihan restoran.',
+        skills_kicker: 'Keahlian',
+        skills_title: 'Kemampuan & Eksplorasi Tools',
+        skills_cat1: 'Administrasi & Perkantoran',
+        skills_cat1_sub: 'Pengolahan dokumen, tabel data, dan rekap laporan',
+        skills_cat2: 'Web & AI Exploration',
+        skills_cat2_sub: 'Bidang yang sedang dipelajari dan dipraktikkan',
+        proj_kicker: 'Portofolio Web',
+        proj_title: 'Proyek & Eksperimen',
+        proj_note: 'Diperbarui secara bertahap seiring proyek selesai',
+        proj1_desc:
+          'Halaman penawaran layanan internet fiber dengan informasi paket, area cakupan, dan tombol konversi langsung ke WhatsApp sales.',
+        proj1_link: 'Lihat Live &rarr;',
+        proj2_title: 'Company Profile Ekspor-Impor',
+        proj2_desc:
+          'Perancangan landing page perusahaan ekspor-impor yang mencakup layanan correspondence, payment, logistic, customs clearance, dan regulation handling.',
+        proj2_status: 'Tahap Desain & PRD',
+        contact_kicker: 'Kontak',
+        contact_title: 'Mari Terhubung',
+        contact_desc:
+          'Silakan pindai kode QR WhatsApp di samping untuk terhubung langsung, atau kirim email untuk diskusi pekerjaan maupun kolaborasi proyek digital.',
+        btn_copy: 'Salin',
+        btn_copied: 'Tersalin!',
+        qr_title: 'Scan QR WhatsApp',
+        qr_sub: 'Arahkan kamera HP untuk chat langsung',
+        footer_text: '&copy; 2026 Deri Tri Hartono. Dibuat dengan semangat eksplorasi AI &amp; Vibe Coding.',
+      },
+      en: {
+        nav_about: 'About',
+        nav_exp: 'Experience',
+        nav_skills: 'Skills',
+        nav_projects: 'Projects',
+        nav_contact: 'Contact',
+        nav_cta: 'Contact Me',
+        hero_badge: 'Open for Opportunities & Collaboration',
+        hero_greeting: 'Hello, my name is',
+        hero_desc:
+          'I am an <strong class="font-semibold text-brand-ink dark:text-white">Aspiring Vibe Coder</strong> and <strong class="font-semibold text-brand-ink dark:text-white">AI Enthusiast</strong> focused on designing and building modern websites as well as practical digital solutions.',
+        about_kicker: 'About Me',
+        about_title: 'Background & Education',
+        about_p1:
+          'Experienced in operational roles, customer service, cashiering, and warehouse administration—building strong habits in data accuracy, fast-paced execution, and procedural discipline.',
+        about_p2:
+          'Currently developing skills in <span class="text-brand-ink dark:text-white font-semibold">vibe coding</span>, web interface design (UI/UX), and exploring AI tools to build effective <span class="text-brand-ink dark:text-white font-semibold">landing pages</span> and streamlined digital workflows.',
+        edu_label: 'Latest Education',
+        edu_sub: 'Senior High School',
+        exp_kicker: 'Career History',
+        exp_title: 'Previous Work Experience',
+        exp1_tag: 'Logistics & Administration',
+        exp1_desc:
+          'Managed inbound and outbound package records, warehouse operational administration reports, and ensured shipping data accuracy.',
+        exp2_tag: 'Hospitality & Transactions',
+        exp2_role: 'Cashier',
+        exp2_desc:
+          'Handled customer payments, daily transaction reconciliation, cash administration, and front-desk hospitality service.',
+        exp3_tag: 'F&B Service & POS',
+        exp3_role: 'Cashier',
+        exp3_desc:
+          'Operated point-of-sale (POS) systems in a fast-paced restaurant environment, ensuring billing accuracy and smooth customer service coordination.',
+        exp4_tag: 'Kitchen Operations',
+        exp4_desc:
+          'Maintained kitchenware and dining utensil sanitation while supporting smooth kitchen workflow in compliance with restaurant hygiene standards.',
+        skills_kicker: 'Skills',
+        skills_title: 'Capabilities & Tool Exploration',
+        skills_cat1: 'Office & Administration',
+        skills_cat1_sub: 'Document processing, data tables, and report summaries',
+        skills_cat2: 'Web & AI Exploration',
+        skills_cat2_sub: 'Areas currently being studied and practiced',
+        proj_kicker: 'Web Portfolio',
+        proj_title: 'Projects & Experiments',
+        proj_note: 'Continuously updated as new projects are completed',
+        proj1_desc:
+          'Fiber internet promotional landing page featuring package details, coverage areas, and direct WhatsApp sales conversion.',
+        proj1_link: 'View Live &rarr;',
+        proj2_title: 'Export-Import Company Profile',
+        proj2_desc:
+          'Landing page design for an export-import company covering correspondence, payment, logistics, customs clearance, and regulation handling services.',
+        proj2_status: 'Design & PRD Phase',
+        contact_kicker: 'Contact',
+        contact_title: "Let's Connect",
+        contact_desc:
+          'Scan the WhatsApp QR code beside to chat directly, or send an email for job inquiries and digital project collaborations.',
+        btn_copy: 'Copy',
+        btn_copied: 'Copied!',
+        qr_title: 'Scan WhatsApp QR',
+        qr_sub: 'Point your phone camera to chat directly',
+        footer_text: '&copy; 2026 Deri Tri Hartono. Built with AI exploration &amp; Vibe Coding.',
+      },
+    };
+
+    let currentLang = localStorage.getItem('portfolio_lang') || 'id';
+
+    function setLanguage(lang) {
+      currentLang = lang;
+      localStorage.setItem('portfolio_lang', lang);
+      htmlEl.setAttribute('lang', lang);
+
+      document.querySelectorAll('[data-i18n]').forEach((el) => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[lang][key]) {
+          el.innerHTML = translations[lang][key];
+        }
+      });
+
+      const btnId = document.getElementById('btn-lang-id');
+      const btnEn = document.getElementById('btn-lang-en');
+
+      if (lang === 'id') {
+        btnId.className = 'rounded-md bg-brand-sky px-2.5 py-1 text-xs font-bold text-brand-ink transition';
+        btnEn.className = 'rounded-md px-2.5 py-1 text-xs font-bold text-brand-sage dark:text-brand-slate hover:text-brand-ink dark:hover:text-white transition';
+      } else {
+        btnEn.className = 'rounded-md bg-brand-sky px-2.5 py-1 text-xs font-bold text-brand-ink transition';
+        btnId.className = 'rounded-md px-2.5 py-1 text-xs font-bold text-brand-sage dark:text-brand-slate hover:text-brand-ink dark:hover:text-white transition';
+      }
+    }
+
+    setLanguage(currentLang);
+
+    // 4. Copy Email Helper
+    function copyText(text, btn) {
+      navigator.clipboard.writeText(text).then(() => {
+        btn.innerText = translations[currentLang].btn_copied;
+        setTimeout(() => {
+          btn.innerText = translations[currentLang].btn_copy;
+        }, 1800);
+      });
+    }
+  </script>
+</body>
+</html>
