@@ -115,6 +115,27 @@ h1,h2,h3,p,ul{margin:0}ul{padding:0;list-style:none}a{color:inherit}
 .tools li{display:flex;align-items:center;gap:.8rem;padding:.7rem .9rem;border-radius:14px;font-weight:600;background:var(--egg-soft)}
 .tools li .ic{width:1.4em;height:1.4em}
 .tools li .pill{margin-left:auto;background:var(--lime);border-color:var(--black)}
+/* efek lift + hard shadow untuk tag dan daftar keahlian */
+.tags .pill,
+.tools li{
+  transition:transform .2s, box-shadow .2s, border-color .2s;
+}
+
+/* border transparan agar ukuran tidak bergeser saat hover */
+.tools li{border:2px solid transparent}
+
+@media (hover:hover){
+  .tags .pill:hover{
+    transform:translateY(-3px);
+    border-color:var(--black);
+    box-shadow:0 4px 0 var(--lime), 0 4px 0 2px var(--black);
+  }
+  .tools li:hover{
+    transform:translateY(-3px);
+    border-color:var(--black);
+    box-shadow:0 5px 0 var(--lime), 0 5px 0 2px var(--black);
+  }
+}
 
 /* ===== contact ===== */
 .contact{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:3rem}
@@ -143,7 +164,39 @@ footer nav{display:flex;gap:1.25rem;flex-wrap:wrap}
   .two,.contact{gap:2rem}
 }
 @media(max-width:560px){.wa-fab span{display:none}.wa-fab{padding:.8rem}.edu .yr{border-right:0;padding-right:0}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.pop img{animation:none}.btn,.job,.links a{transition:none}}
+/* 1. efek tekan di layar sentuh */
+@media (hover:none){
+  .job,.tools li,.tags .pill{transition:transform .15s}
+  .job:active,.tools li:active,.tags .pill:active{transform:scale(.96)}
+}
+
+/* 2. scroll reveal */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+.jobs .reveal:nth-child(2),.skills .reveal:nth-child(2){transition-delay:.1s}
+.jobs .reveal:nth-child(3){transition-delay:.2s}
+.jobs .reveal:nth-child(4){transition-delay:.3s}
+
+/* 3. foto mengambang pelan */
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.pop{animation:floaty 5s ease-in-out infinite}
+
+/* teks penjelasan karier */
+.job .desc{font-size:1rem;line-height:1.65;color:var(--muted);margin-top:.35rem}
+
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .pop img{animation:none}
+  .btn,.job,.links a,.tags .pill,.tools li{transition:none}
+  .reveal{opacity:1;transform:none;transition:none}
+  .pop{animation:none}
+}
+.marquee{background:var(--black);color:var(--white);overflow:hidden;padding:.9rem 0}
+.marquee .track{display:flex;width:max-content;animation:run 22s linear infinite}
+.marquee span{display:inline-flex;align-items:center;gap:2.5rem;padding-right:2.5rem;font-weight:800;font-size:1.25rem;white-space:nowrap}
+.marquee span::after{content:"";width:10px;height:10px;border-radius:50%;background:var(--lime)}
+@keyframes run{to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){.marquee .track{animation:none}}
 </style>
 </head>
 <body>
@@ -217,6 +270,13 @@ footer nav{display:flex;gap:1.25rem;flex-wrap:wrap}
       </div>
     </div>
   </section>
+<div class="marquee" aria-hidden="true">
+  <div class="track">
+    <span>Vibe Coding</span><span>UI/UX</span><span>Tools AI</span><span>Landing Page</span>
+    <span>Vibe Coding</span><span>UI/UX</span><span>Tools AI</span><span>Landing Page</span>
+  </div>
+</div>
+
 
   <section id="pendidikan" class="band egg" aria-labelledby="t-pend">
     <div class="wrap">
@@ -230,26 +290,26 @@ footer nav{display:flex;gap:1.25rem;flex-wrap:wrap}
   
   <section id="karier" class="band" aria-labelledby="t-karier">
   <div class="wrap">
-    <div class="head"><span class="badge"><svg class="ic"><use href="#i-brief"/></svg></span><h2 class="h2" id="t-karier">Riwayat Karier</h2></div>
+    <div class="head reveal"><span class="badge"><svg class="ic"><use href="#i-brief"/></svg></span><h2 class="h2" id="t-karier">Riwayat Karier</h2></div>
     <div class="jobs">
-      <article class="job"><span class="badge egg sm"><svg class="ic"><use href="#i-receipt"/></svg></span><div class="txt"><h3 class="h3">Kasir</h3><p class="sub">Foxy Spa PIK Elang Laut</p><span class="pill">Hospitality &amp; Transaksi</span><p class="desc">Menangani proses pembayaran pelanggan, pencatatan laporan transaksi harian, serta menjaga kerapian administrasi kas dan pelayanan front-desk.</p></div></article>
-      <article class="job"><span class="badge egg sm"><svg class="ic"><use href="#i-receipt"/></svg></span><div class="txt"><h3 class="h3">Kasir</h3><p class="sub">The Holy Crab &amp; Holy Smokes</p><span class="pill">F&amp;B Service &amp; POS</span><p class="desc">Mengoperasikan sistem kasir (POS) di lingkungan restoran dengan ritme cepat, memastikan ketepatan tagihan, dan koordinasi layanan pelanggan.</p></div></article>
-      <article class="job"><span class="badge egg sm"><svg class="ic"><use href="#i-utensils"/></svg></span><div class="txt"><h3 class="h3">Dishwasher</h3><p class="sub">Song Fa Bak Kut Teh</p><span class="pill">Kitchen Operations</span><p class="desc">Menjaga kebersihan, sanitasi peralatan dapur dan makan, serta mendukung kelancaran alur operasional tim dapur sesuai standar kebersihan restoran.</p></div></article>
-      <article class="job"><span class="badge egg sm"><svg class="ic"><use href="#i-box"/></svg></span><div class="txt"><h3 class="h3">Warehouse Admin</h3><p class="sub">PT IDexpress Service Solution</p><span class="pill">Logistik &amp; Administrasi</span><p class="desc">Mengelola pencatatan data keluar-masuk paket/barang, rekapitulasi administrasi operasional gudang, serta memastikan akurasi data pengiriman.</p></div></article>
+      <article class="job reveal"><span class="badge egg sm"><svg class="ic"><use href="#i-receipt"/></svg></span><div class="txt"><h3 class="h3">Kasir</h3><p class="sub">Foxy Spa PIK Elang Laut</p><span class="pill">Hospitality &amp; Transaksi</span><p class="desc">Menangani proses pembayaran pelanggan, pencatatan laporan transaksi harian, serta menjaga kerapian administrasi kas dan pelayanan front-desk.</p></div></article>
+      <article class="job reveal"><span class="badge egg sm"><svg class="ic"><use href="#i-receipt"/></svg></span><div class="txt"><h3 class="h3">Kasir</h3><p class="sub">The Holy Crab &amp; Holy Smokes</p><span class="pill">F&amp;B Service &amp; POS</span><p class="desc">Mengoperasikan sistem kasir (POS) di lingkungan restoran dengan ritme cepat, memastikan ketepatan tagihan, dan koordinasi layanan pelanggan.</p></div></article>
+      <article class="job reveal"><span class="badge egg sm"><svg class="ic"><use href="#i-utensils"/></svg></span><div class="txt"><h3 class="h3">Dishwasher</h3><p class="sub">Song Fa Bak Kut Teh</p><span class="pill">Kitchen Operations</span><p class="desc">Menjaga kebersihan, sanitasi peralatan dapur dan makan, serta mendukung kelancaran alur operasional tim dapur sesuai standar kebersihan restoran.</p></div></article>
+      <article class="job reveal"><span class="badge egg sm"><svg class="ic"><use href="#i-box"/></svg></span><div class="txt"><h3 class="h3">Warehouse Admin</h3><p class="sub">PT IDexpress Service Solution</p><span class="pill">Logistik &amp; Administrasi</span><p class="desc">Mengelola pencatatan data keluar-masuk paket/barang, rekapitulasi administrasi operasional gudang, serta memastikan akurasi data pengiriman.</p></div></article>
     </div>
   </div>
   </section>
 
   <section id="keahlian" class="band soft" aria-labelledby="t-skill">
     <div class="wrap">
-      <div class="head"><span class="badge"><svg class="ic"><use href="#i-spark"/></svg></span><h2 class="h2" id="t-skill">Keahlian</h2></div>
+      <div class="head reveal"><span class="badge"><svg class="ic"><use href="#i-spark"/></svg></span><h2 class="h2" id="t-skill">Keahlian</h2></div>
       <div class="skills">
-        <div class="skill">
+        <div class="skill reveal">
           <h3 class="h3">Administrasi &amp; Perkantoran</h3>
           <p class="sub">Pengolahan dokumen, tabel data, dan rekap laporan.</p>
           <ul class="tools"><li><svg class="ic"><use href="#i-doc"/></svg>Microsoft Word <span class="pill">Basic</span></li><li><svg class="ic"><use href="#i-table"/></svg>Microsoft Excel <span class="pill">Basic</span></li><li><svg class="ic"><use href="#i-table"/></svg>Google Spreadsheet <span class="pill">Basic</span></li></ul>
         </div>
-        <div class="skill">
+        <div class="skill reveal">
           <h3 class="h3">Sedang dikembangkan</h3>
           <p class="sub">Keterampilan digital untuk membangun website dan solusi praktis.</p>
           <ul class="tools"><li><svg class="ic"><use href="#i-code"/></svg>Vibe coding</li><li><svg class="ic"><use href="#i-layout"/></svg>Perancangan antarmuka web (UI/UX)</li><li><svg class="ic"><use href="#i-spark"/></svg>Tools AI untuk landing page dan alur kerja</li></ul>
@@ -324,6 +384,22 @@ footer nav{display:flex;gap:1.25rem;flex-wrap:wrap}
     say('Aplikasi email akan terbuka. Jika tidak terbuka, klik "Salin pesan" lalu kirim manual ke <span class="sel">'+EMAIL+'</span> atau gunakan tombol WhatsApp.')});
   document.getElementById('copymsg').addEventListener('click',function(){var d=data();if(!valid(d))return;
     copy('Kepada: '+EMAIL+'\n\n'+body(d)).then(function(ok){say(ok?'Pesan disalin. Tempel di email atau WhatsApp.':'Penyalinan otomatis gagal. Salin teks pesan Anda secara manual, lalu kirim ke <span class="sel">'+EMAIL+'</span>.',!ok)})});
+/* scroll reveal */
+var rv=[].slice.call(document.querySelectorAll('.reveal'));
+if('IntersectionObserver' in window){
+  var io=new IntersectionObserver(function(en){
+    en.forEach(function(e){if(e.isIntersecting){
+  var t=e.target;t.classList.add('in');io.unobserve(t);
+  setTimeout(function(){t.classList.remove('reveal','in')},1200);
+}})
+  },{threshold:.15});
+  rv.forEach(function(el){io.observe(el)});
+}else{rv.forEach(function(el){el.classList.add('in')})}
+
+/* getaran halus saat tombol ditekan (Android) */
+document.addEventListener('pointerdown',function(e){
+  if(e.target.closest('.btn')&&navigator.vibrate)navigator.vibrate(12);
+});
 })();
 </script>
 </body>
