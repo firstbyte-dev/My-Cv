@@ -1,632 +1,330 @@
 <!DOCTYPE html>
-<html lang="id" class="scroll-smooth">
+<html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Deri Tri Hartono — Aspiring Vibe Coder &amp; AI Enthusiast</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet"
-  />
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-          },
-          colors: {
-            brand: {
-              sage: '#6c756b',
-              slate: '#93acb5',
-              sky: '#96c5f7',
-              ice: '#a9d3ff',
-              snow: '#f2f4ff',
-              ink: '#1e2421',
-              darkbg: '#0f1417',
-              darkcard: '#171f24',
-            },
-          },
-        },
-      },
-    };
-  </script>
-  <style>
-    .reveal {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.6s ease-out;
-    }
-    .reveal.active {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<title>CV Deri Tri Hartono - Aspiring Vibe Coder &amp; AI Enthusiast</title>
+<meta name="description" content="CV online Deri Tri Hartono, Aspiring Vibe Coder dan AI Enthusiast yang merancang website modern dan solusi digital yang praktis.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<style>
+:root{
+  --white:#ffffff;--black:#0a0a0a;
+  --egg:#8fd8d6;--egg-soft:#e4f6f5;--egg-deep:#52bdba;
+  --lime:#c9f31d;
+  --muted:#3a3a3a;--line:rgba(10,10,10,.14);
+  --font:"Plus Jakarta Sans","Segoe UI",system-ui,-apple-system,sans-serif;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 84px);-webkit-text-size-adjust:100%;height:auto}
+body{margin:0;background:var(--white);color:var(--black);font-family:var(--font);font-size:1.0625rem;line-height:1.7}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--white);pointer-events:none}
+h1,h2,h3,p,ul{margin:0}ul{padding:0;list-style:none}a{color:inherit}
+.flex{display:flex}.flex-wrap{flex-wrap:wrap}.items-center{align-items:center}.gap-3{gap:.75rem}
+:focus-visible{outline:3px solid var(--black);outline-offset:3px;border-radius:10px}
+.on-dark :focus-visible{outline-color:var(--lime)}
+.wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 1.5rem}
+.ic{width:1.25em;height:1.25em;flex:none;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+
+/* ===== type: size follows importance ===== */
+.h1{font-weight:800;font-size:clamp(3rem,7.4vw,5.5rem);line-height:1;letter-spacing:-.035em}
+.role{font-weight:800;font-size:clamp(1.5rem,3vw,2.125rem);line-height:1.25;letter-spacing:-.02em}
+.mark{background:linear-gradient(transparent 58%,var(--lime) 58%);padding:0 .15em;margin:0 -.15em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.hello{font-size:1.25rem;font-weight:600;color:var(--muted)}
+.h2{font-weight:800;font-size:clamp(2rem,4.4vw,3rem);line-height:1.1;letter-spacing:-.03em}
+.h3{font-weight:700;font-size:1.5rem;line-height:1.25;letter-spacing:-.015em}
+.lead{font-size:1.1875rem;color:var(--muted);max-width:60ch}
+.sub{font-size:1.0625rem;font-weight:600;color:var(--muted)}
+.meta{font-size:.9375rem;font-weight:600;color:var(--muted)}
+.pill{display:inline-block;padding:.25rem .8rem;border-radius:999px;font-size:.9375rem;font-weight:600;background:var(--egg-soft);border:1px solid var(--line)}
+.badge{display:inline-grid;place-items:center;width:52px;height:52px;border-radius:50%;background:var(--black);color:var(--white);flex:none}
+.badge .ic{width:26px;height:26px}
+.badge.sm{width:44px;height:44px}.badge.sm .ic{width:22px;height:22px}
+.badge.egg{background:var(--egg);color:var(--black)}
+.on-dark .badge{background:var(--lime);color:var(--black)}
+.head{display:flex;align-items:center;gap:1rem;margin-bottom:2rem}
+
+/* ===== bands ===== */
+.band{padding:clamp(3.5rem,8vw,6.5rem) 0}
+.band.soft{background:var(--egg-soft)}
+.band.egg{background:var(--egg)}
+.band.on-dark{background:var(--black);color:var(--white)}
+.band.on-dark .lead,.band.on-dark .sub,.band.on-dark .meta{color:rgba(255,255,255,.82)}
+.rule{border-top:1px solid var(--line)}
+
+/* ===== navbar ===== */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:var(--white);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;gap:1rem;height:72px}
+.brand{display:flex;align-items:center;gap:.7rem;text-decoration:none;flex:none}
+.brand svg{width:42px;height:42px;display:block}
+.brand span{font-weight:800;font-size:1.125rem;letter-spacing:-.02em;white-space:nowrap}
+.links{display:flex;gap:.2rem;margin-left:auto;overflow-x:auto;scrollbar-width:none;padding:2px}
+.links::-webkit-scrollbar{display:none}
+.links a{flex:none;text-decoration:none;font-weight:600;font-size:1rem;padding:.5rem 1rem;border-radius:999px;transition:background .2s,color .2s,transform .15s}
+.links a:hover{background:var(--egg-soft)}
+.links a[aria-current="true"]{background:var(--black);color:var(--white)}
+@media(max-width:720px){.brand span{display:none}}
+
+/* ===== buttons ===== */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;min-height:52px;padding:.75rem 1.5rem;border-radius:999px;font:700 1.0625rem var(--font);
+  text-decoration:none;cursor:pointer;border:2px solid var(--black);background:var(--egg);color:var(--black);transition:transform .15s,background .2s,box-shadow .2s}
+.btn:hover{background:var(--egg-deep);transform:translateY(-2px)}
+.btn:active{transform:scale(.95)}
+.btn.lime{background:var(--lime)}.btn.lime:hover{background:#b7e010}
+.btn.ghost{background:transparent;color:inherit}
+.on-dark .btn{border-color:var(--white)}.on-dark .btn.ghost:hover{background:rgba(255,255,255,.14)}
+.on-dark .btn.lime{border-color:var(--lime)}.on-dark .btn:not(.ghost):not(.lime){color:var(--black)}
+.wa-fab{position:fixed;right:max(1.1rem,env(safe-area-inset-right,0px));bottom:calc(env(safe-area-inset-bottom,0px) + 1.1rem);z-index:55;box-shadow:0 6px 0 var(--black)}
+.wa-fab:active{box-shadow:0 2px 0 var(--black);transform:translateY(4px)}
+
+/* ===== hero ===== */
+.hero{padding:clamp(2.5rem,6vw,5rem) 0 clamp(3rem,6vw,5rem)}
+.grid12{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:2rem;align-items:center}
+.hero-copy{grid-column:span 7;display:flex;flex-direction:column;gap:1.25rem}
+.hero-photo{grid-column:span 5;display:flex;justify-content:center;align-items:flex-end}
+.pop{position:relative;width:min(100%,260px);margin-top:3.5rem}
+.pop::before{content:"";position:absolute;left:0;right:0;bottom:0;height:68%;background:var(--egg);border-radius:28px;border:2px solid var(--black)}
+.pop .dot{position:absolute;width:64px;height:64px;border-radius:50%;background:var(--lime);right:-22px;top:6%;border:2px solid var(--black)}
+.pop img{position:relative;display:block;width:100%;height:auto;animation:fin 1.2s ease-out both;
+  clip-path:inset(-60% 0 2px 0 round 0 0 26px 26px);filter:drop-shadow(0 10px 12px rgba(0,0,0,.28))}
+@keyframes fin{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.trust{display:grid;grid-template-columns:repeat(3,1fr);margin-top:clamp(2.5rem,5vw,4rem);border-top:1px solid var(--line)}
+.trust>div{display:flex;gap:1rem;align-items:center;padding:1.5rem 1.25rem 0 0}
+.trust strong{display:block;font-size:1.25rem;line-height:1.3;letter-spacing:-.01em}
+
+/* ===== sections ===== */
+.two{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:3rem;align-items:start}
+.two>.l{grid-column:span 7;display:flex;flex-direction:column;gap:1.25rem}
+.two>.r{grid-column:span 5;display:flex;flex-direction:column;gap:1.25rem}
+.tags{display:flex;flex-wrap:wrap;gap:.55rem}
+.tags .pill{background:var(--white)}
+.edu{display:flex;gap:1.5rem;align-items:center;flex-wrap:wrap}
+.edu .yr{font-weight:800;font-size:2rem;letter-spacing:-.03em;padding-right:1.5rem;border-right:2px solid var(--black)}
+.jobs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.25rem}
+.job{display:flex;gap:1.1rem;align-items:flex-start;padding:1.6rem;border:2px solid var(--black);border-radius:22px;background:var(--white);transition:transform .2s,box-shadow .2s}
+.job:hover{transform:translateY(-3px);box-shadow:0 6px 0 var(--lime),0 6px 0 2px var(--black)}
+.job .txt{display:flex;flex-direction:column;gap:.35rem}
+.job .pill{align-self:flex-start;margin-top:.5rem}
+.skills{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.25rem}
+.skill{padding:1.75rem;border:2px solid var(--black);border-radius:22px;background:var(--white);display:flex;flex-direction:column;gap:1rem}
+.tools{display:flex;flex-direction:column;gap:.6rem}
+.tools li{display:flex;align-items:center;gap:.8rem;padding:.7rem .9rem;border-radius:14px;font-weight:600;background:var(--egg-soft)}
+.tools li .ic{width:1.4em;height:1.4em}
+.tools li .pill{margin-left:auto;background:var(--lime);border-color:var(--black)}
+
+/* ===== contact ===== */
+.contact{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:3rem}
+.contact .info{grid-column:span 5;display:flex;flex-direction:column;gap:1.25rem}
+.contact form{grid-column:span 7;display:flex;flex-direction:column;gap:1rem}
+.field{display:flex;flex-direction:column;gap:.4rem}
+.field label{font-weight:700;font-size:1rem}
+.field input,.field textarea{width:100%;font:500 1.0625rem var(--font);color:var(--black);padding:.85rem 1rem;border-radius:14px;background:var(--white);border:2px solid var(--white)}
+.field input:focus,.field textarea:focus{outline:3px solid var(--lime);outline-offset:0}
+.field textarea{min-height:140px;resize:vertical}
+.field ::placeholder{color:#555;opacity:1}
+.mailrow{display:flex;gap:.8rem;align-items:center;flex-wrap:wrap}
+.mail{font-weight:700;word-break:break-all}
+.status{min-height:1.6rem;font-weight:600;color:var(--egg)}
+.status.err{color:var(--white);text-decoration:underline wavy var(--lime) 1.5px;text-underline-offset:5px}
+.status .sel{user-select:all;-webkit-user-select:all;font-weight:800}
+footer{background:var(--black);color:var(--white);border-top:1px solid rgba(255,255,255,.18);padding:2rem 0 6.5rem}
+footer .wrap{display:flex;gap:1.25rem;flex-wrap:wrap;justify-content:space-between;align-items:center}
+footer p,footer a{font-weight:600;font-size:1rem}
+footer nav{display:flex;gap:1.25rem;flex-wrap:wrap}
+
+@media(max-width:980px){
+  .hero-copy,.hero-photo,.two>.l,.two>.r,.contact .info,.contact form{grid-column:1/-1}
+  .pop{width:min(100%,220px)}
+  .trust,.jobs,.skills{grid-template-columns:1fr}.trust>div{padding:1.25rem 0 0}
+  .two,.contact{gap:2rem}
+}
+@media(max-width:560px){.wa-fab span{display:none}.wa-fab{padding:.8rem}.edu .yr{border-right:0;padding-right:0}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.pop img{animation:none}.btn,.job,.links a{transition:none}}
+</style>
 </head>
-<body class="bg-brand-snow text-brand-ink dark:bg-brand-darkbg dark:text-brand-snow font-sans antialiased transition-colors duration-300 selection:bg-brand-sky/50 selection:text-brand-ink">
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="i-cap" viewBox="0 0 24 24"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/><path d="M22 10v6"/></symbol>
+<symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol>
+<symbol id="i-brief" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><path d="M2 13h20"/></symbol>
+<symbol id="i-code" viewBox="0 0 24 24"><path d="m8 8-4 4 4 4"/><path d="m16 8 4 4-4 4"/><path d="m14 5-4 14"/></symbol>
+<symbol id="i-spark" viewBox="0 0 24 24"><path d="M11 3l1.8 5.2L18 10l-5.2 1.8L11 17l-1.8-5.2L4 10l5.2-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></symbol>
+<symbol id="i-layout" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></symbol>
+<symbol id="i-doc" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h6"/></symbol>
+<symbol id="i-table" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></symbol>
+<symbol id="i-receipt" viewBox="0 0 24 24"><path d="M5 3h14v18l-3-2-2 2-2-2-2 2-2-2-3 2z"/><path d="M9 8h6M9 12h6"/></symbol>
+<symbol id="i-utensils" viewBox="0 0 24 24"><path d="M6 3v8M3 3v5a3 3 0 0 0 6 0V3M6 11v10"/><path d="M17 3c-2 2-3 5-3 8h6V3zM17 11v10"/></symbol>
+<symbol id="i-box" viewBox="0 0 24 24"><path d="M21 8 12 3 3 8v8l9 5 9-5z"/><path d="m3 8 9 5 9-5M12 13v8"/></symbol>
+<symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="m9 12 2 2 4-4"/></symbol>
+<symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></symbol>
+<symbol id="i-wa" viewBox="0 0 24 24"><path d="M20.5 3.5A11 11 0 0 0 3.2 17.3L2 22l4.8-1.2A11 11 0 1 0 20.5 3.5z"/><path d="M8.6 8.4c.4 2.9 2.9 5.4 6 6l1.4-1.4-2-1-1 .8a4 4 0 0 1-2.2-2.2l.8-1-1-2z"/></symbol>
+<symbol id="i-copy" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2.5"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></symbol>
+<symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-11.6 7.1L3 21l1.9-5.4A8 8 0 1 1 21 12z"/></symbol>
+</defs></svg>
 
-  <!-- Sticky Navigation Bar -->
-  <header class="sticky top-0 z-50 border-b border-brand-slate/30 bg-brand-snow/85 dark:border-brand-slate/20 dark:bg-brand-darkbg/85 backdrop-blur-md transition-colors duration-300">
-    <div class="mx-auto flex max-w-5xl items-center justify-between gap-4 px-6 py-4">
-      <a href="#home" class="text-lg font-extrabold tracking-tight text-brand-ink dark:text-white">
-        Deri<span class="text-brand-sage dark:text-brand-sky">.dev</span>
-      </a>
+<header class="nav" role="banner">
+  <div class="wrap">
+    <a class="brand" href="#beranda" aria-label="Deri Tri Hartono, ke beranda">
+      <svg viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="12" fill="#0a0a0a"/><text x="24" y="30" text-anchor="middle" font-family="Plus Jakarta Sans,Segoe UI,sans-serif" font-weight="800" font-size="16" fill="#fff">DTH</text><circle cx="39" cy="9" r="4.5" fill="#c9f31d"/></svg>
+      <span>Deri Tri Hartono</span>
+    </a>
+    <nav class="links" id="links" aria-label="Navigasi utama">
+      <a href="#beranda" aria-current="true">Beranda</a><a href="#tentang">Tentang</a><a href="#pendidikan">Pendidikan</a><a href="#karier">Karier</a><a href="#keahlian">Keahlian</a><a href="#kontak">Kontak</a>
+    </nav>
+  </div>
+</header>
 
-      <nav class="hidden gap-6 text-sm font-medium text-brand-sage dark:text-brand-slate md:flex">
-        <a href="#about" data-i18n="nav_about" class="transition hover:text-brand-ink dark:hover:text-white">Tentang</a>
-        <a href="#experience" data-i18n="nav_exp" class="transition hover:text-brand-ink dark:hover:text-white">Pengalaman</a>
-        <a href="#skills" data-i18n="nav_skills" class="transition hover:text-brand-ink dark:hover:text-white">Kemampuan</a>
-        <a href="#projects" data-i18n="nav_projects" class="transition hover:text-brand-ink dark:hover:text-white">Proyek</a>
-        <a href="#contact" data-i18n="nav_contact" class="transition hover:text-brand-ink dark:hover:text-white">Kontak</a>
-      </nav>
-
-      <!-- Controls: Language (ID/EN), Theme (Light/Dark), & CTA -->
-      <div class="flex items-center gap-2 sm:gap-3">
-        <!-- Language Toggle -->
-        <div class="inline-flex rounded-lg border border-brand-slate/40 bg-white/80 p-0.5 dark:border-brand-slate/25 dark:bg-brand-darkcard">
-          <button
-            id="btn-lang-id"
-            onclick="setLanguage('id')"
-            class="rounded-md px-2.5 py-1 text-xs font-bold transition"
-          >
-            ID
-          </button>
-          <button
-            id="btn-lang-en"
-            onclick="setLanguage('en')"
-            class="rounded-md px-2.5 py-1 text-xs font-bold transition"
-          >
-            EN
-          </button>
+<main>
+  <section id="beranda" class="hero" aria-labelledby="nama">
+    <div class="wrap">
+      <div class="grid12">
+        <div class="hero-copy">
+          <p class="hello">Hello, nama saya</p>
+          <h1 class="h1" id="nama">Deri Tri Hartono</h1>
+          <p class="role"><span class="mark">Aspiring Vibe Coder &amp; AI Enthusiast</span></p>
+          <p class="lead">Saya berfokus merancang serta membangun website modern maupun solusi digital yang praktis.</p>
         </div>
-
-        <!-- Theme Toggle Button -->
-        <button
-          id="theme-toggle"
-          onclick="toggleTheme()"
-          aria-label="Toggle Dark or Light Mode"
-          class="flex h-8 w-8 items-center justify-center rounded-lg border border-brand-slate/40 bg-white/80 text-brand-ink transition hover:bg-brand-ice/50 dark:border-brand-slate/25 dark:bg-brand-darkcard dark:text-brand-ice dark:hover:bg-brand-slate/20"
-        >
-          <!-- Sun Icon (shown in Dark Mode) -->
-          <svg id="icon-sun" class="hidden h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-          </svg>
-          <!-- Moon Icon (shown in Light Mode) -->
-          <svg id="icon-moon" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-          </svg>
-        </button>
-
-        <a
-          href="https://wa.me/62895600748096?text=Halo%20Deri,%20saya%20tertarik%20setelah%20melihat%20portofolio%20Anda."
-          target="_blank"
-          rel="noopener noreferrer"
-          data-i18n="nav_cta"
-          class="hidden rounded-lg bg-brand-sky px-3.5 py-1.5 text-xs font-bold text-brand-ink shadow-sm transition hover:bg-brand-ice sm:inline-block"
-        >
-          Hubungi Saya
-        </a>
+        <div class="hero-photo">
+          <div class="pop"><span class="dot" aria-hidden="true"></span>
+            <img src="data:image/webp;base64,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" alt="Deri Tri Hartono tersenyum, mengenakan kemeja hitam" width="331" height="475" decoding="async">
+          </div>
+        </div>
       </div>
-    </div>
-  </header>
-
-  <!-- Hero Section -->
-  <section id="home" class="relative overflow-hidden border-b border-brand-slate/30 dark:border-brand-slate/20 py-20 md:py-28">
-    <div class="pointer-events-none absolute -top-24 left-1/2 h-80 w-80 -translate-x-1/2 rounded-full bg-brand-ice/50 dark:bg-brand-sky/10 blur-3xl"></div>
-
-    <div class="mx-auto max-w-5xl px-6">
-      <div class="max-w-3xl">
-        <div class="mb-5 inline-flex items-center gap-2 rounded-full border border-brand-slate/40 bg-white/80 dark:border-brand-slate/25 dark:bg-brand-darkcard px-3.5 py-1.5 text-xs font-semibold text-brand-sage dark:text-brand-ice shadow-sm">
-          <span class="h-2 w-2 rounded-full bg-brand-sky animate-pulse"></span>
-          <span data-i18n="hero_badge">Open for Opportunities &amp; Collaboration</span>
-        </div>
-
-        <h1 class="text-4xl font-extrabold tracking-tight text-brand-ink dark:text-white sm:text-5xl md:text-6xl">
-          <span data-i18n="hero_greeting">Hello, nama saya</span> <br />
-          <span class="text-brand-sage dark:text-brand-sky">
-            Deri Tri Hartono
-          </span>
-        </h1>
-
-        <p data-i18n="hero_desc" class="mt-6 text-lg leading-relaxed text-brand-sage dark:text-brand-slate sm:text-xl">
-          Saya adalah <strong class="font-semibold text-brand-ink dark:text-white">Aspiring Vibe Coder</strong> dan
-          <strong class="font-semibold text-brand-ink dark:text-white">AI Enthusiast</strong> yang berfokus merancang
-          serta membangun website modern maupun solusi digital yang praktis.
-        </p>
+      <div class="trust">
+        <div><span class="badge egg"><svg class="ic"><use href="#i-brief"/></svg></span><div><strong>4 tempat kerja</strong><span class="meta">Pengalaman nyata di lapangan</span></div></div>
+        <div><span class="badge egg"><svg class="ic"><use href="#i-shield"/></svg></span><div><strong>Teliti dan disiplin</strong><span class="meta">Terlatih dengan data dan prosedur</span></div></div>
+        <div><span class="badge egg"><svg class="ic"><use href="#i-chat"/></svg></span><div><strong>Mudah dihubungi</strong><span class="meta">Lewat WhatsApp atau email</span></div></div>
       </div>
     </div>
   </section>
 
-  <!-- About & Education Section -->
-  <section id="about" class="border-b border-brand-slate/30 dark:border-brand-slate/20 py-16 md:py-20 reveal">
-    <div class="mx-auto max-w-5xl px-6">
-      <div class="grid gap-10 md:grid-cols-3">
-        <div>
-          <h2 data-i18n="about_kicker" class="text-sm font-bold uppercase tracking-widest text-brand-sage dark:text-brand-sky">Tentang Saya</h2>
-          <p data-i18n="about_title" class="mt-2 text-2xl font-bold text-brand-ink dark:text-white">Latar Belakang &amp; Pendidikan</p>
+  <section id="tentang" class="band rule" aria-labelledby="t-tentang">
+    <div class="wrap two">
+      <div class="l">
+        <div class="head" style="margin-bottom:.5rem"><span class="badge"><svg class="ic"><use href="#i-user"/></svg></span><h2 class="h2" id="t-tentang">Tentang Saya</h2></div>
+        <p class="lead">Saya memiliki latar belakang pengalaman kerja di bidang operasional, layanan pelanggan, kasir, dan administrasi gudang. Pengalaman itu melatih ketelitian data, kecepatan kerja, serta kedisiplinan terhadap prosedur.</p>
+        <p class="lead">Saat ini saya aktif mengembangkan kemampuan di dunia vibe coding dan perancangan antarmuka web (UI/UX), serta mengikuti perkembangan tools AI untuk membantu pembuatan landing page dan efisiensi alur kerja digital.</p>
+      </div>
+      <div class="r">
+        <h3 class="h3">Latar pengalaman</h3>
+        <div class="tags"><span class="pill">Operasional</span><span class="pill">Layanan pelanggan</span><span class="pill">Kasir</span><span class="pill">Administrasi gudang</span></div>
+        <h3 class="h3" style="margin-top:.5rem">Sedang saya dalami</h3>
+        <div class="tags"><span class="pill">Vibe coding</span><span class="pill">UI/UX web</span><span class="pill">Tools AI</span><span class="pill">Landing page</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pendidikan" class="band egg" aria-labelledby="t-pend">
+    <div class="wrap">
+      <div class="head"><span class="badge"><svg class="ic"><use href="#i-cap"/></svg></span><h2 class="h2" id="t-pend">Pendidikan Terakhir</h2></div>
+      <div class="edu">
+        <span class="yr">2012 - 2015</span>
+        <div><h3 class="h3">SMA Baptis Cengkareng Indah</h3><p class="sub" style="color:var(--black)">Sekolah Menengah Atas</p></div>
+      </div>
+    </div>
+  </section>
+  
+  <section id="karier" class="band" aria-labelledby="t-karier">
+  <div class="wrap">
+    <div class="head"><span class="badge"><svg class="ic"><use href="#i-brief"/></svg></span><h2 class="h2" id="t-karier">Riwayat Karier</h2></div>
+    <div class="jobs">
+      <article class="job"><span class="badge egg sm"><svg class="ic"><use href="#i-receipt"/></svg></span><div class="txt"><h3 class="h3">Kasir</h3><p class="sub">Foxy Spa PIK Elang Laut</p><span class="pill">Hospitality &amp; Transaksi</span><p class="desc">Menangani proses pembayaran pelanggan, pencatatan laporan transaksi harian, serta menjaga kerapian administrasi kas dan pelayanan front-desk.</p></div></article>
+      <article class="job"><span class="badge egg sm"><svg class="ic"><use href="#i-receipt"/></svg></span><div class="txt"><h3 class="h3">Kasir</h3><p class="sub">The Holy Crab &amp; Holy Smokes</p><span class="pill">F&amp;B Service &amp; POS</span><p class="desc">Mengoperasikan sistem kasir (POS) di lingkungan restoran dengan ritme cepat, memastikan ketepatan tagihan, dan koordinasi layanan pelanggan.</p></div></article>
+      <article class="job"><span class="badge egg sm"><svg class="ic"><use href="#i-utensils"/></svg></span><div class="txt"><h3 class="h3">Dishwasher</h3><p class="sub">Song Fa Bak Kut Teh</p><span class="pill">Kitchen Operations</span><p class="desc">Menjaga kebersihan, sanitasi peralatan dapur dan makan, serta mendukung kelancaran alur operasional tim dapur sesuai standar kebersihan restoran.</p></div></article>
+      <article class="job"><span class="badge egg sm"><svg class="ic"><use href="#i-box"/></svg></span><div class="txt"><h3 class="h3">Warehouse Admin</h3><p class="sub">PT IDexpress Service Solution</p><span class="pill">Logistik &amp; Administrasi</span><p class="desc">Mengelola pencatatan data keluar-masuk paket/barang, rekapitulasi administrasi operasional gudang, serta memastikan akurasi data pengiriman.</p></div></article>
+    </div>
+  </div>
+  </section>
+
+  <section id="keahlian" class="band soft" aria-labelledby="t-skill">
+    <div class="wrap">
+      <div class="head"><span class="badge"><svg class="ic"><use href="#i-spark"/></svg></span><h2 class="h2" id="t-skill">Keahlian</h2></div>
+      <div class="skills">
+        <div class="skill">
+          <h3 class="h3">Administrasi &amp; Perkantoran</h3>
+          <p class="sub">Pengolahan dokumen, tabel data, dan rekap laporan.</p>
+          <ul class="tools"><li><svg class="ic"><use href="#i-doc"/></svg>Microsoft Word <span class="pill">Basic</span></li><li><svg class="ic"><use href="#i-table"/></svg>Microsoft Excel <span class="pill">Basic</span></li><li><svg class="ic"><use href="#i-table"/></svg>Google Spreadsheet <span class="pill">Basic</span></li></ul>
         </div>
-
-        <div class="space-y-6 md:col-span-2">
-          <div class="space-y-4 text-brand-sage dark:text-brand-slate leading-relaxed">
-            <p data-i18n="about_p1">
-              Memiliki latar belakang pengalaman kerja di bidang operasional, layanan pelanggan, kasir, dan
-              administrasi gudang yang melatih ketelitian data, kecepatan kerja, serta kedisiplinan terhadap
-              prosedur.
-            </p>
-            <p data-i18n="about_p2">
-              Saat ini saya aktif mengembangkan kemampuan di dunia <span class="text-brand-ink dark:text-white font-semibold">vibe coding</span>,
-              perancangan antarmuka web (UI/UX), serta mengikuti perkembangan tools AI untuk membantu
-              pembuatan <span class="text-brand-ink dark:text-white font-semibold">landing page</span> dan efisiensi alur kerja digital.
-            </p>
-          </div>
-
-          <!-- Pendidikan Terakhir -->
-          <div class="rounded-2xl border border-brand-slate/40 bg-white/80 dark:border-brand-slate/25 dark:bg-brand-darkcard p-5 shadow-sm">
-            <div class="flex flex-wrap items-center justify-between gap-2">
-              <span data-i18n="edu_label" class="text-xs font-bold uppercase tracking-wider text-brand-sage dark:text-brand-sky">Pendidikan Terakhir</span>
-              <span class="rounded-full bg-brand-ice/60 dark:bg-brand-sky/20 px-3 py-0.5 text-xs font-semibold text-brand-ink dark:text-brand-ice">
-                2012 - 2015
-              </span>
-            </div>
-            <h3 class="mt-2 text-base font-bold text-brand-ink dark:text-white">SMA Baptis Cengkareng Indah</h3>
-            <p data-i18n="edu_sub" class="mt-1 text-xs text-brand-sage dark:text-brand-slate">Sekolah Menengah Atas</p>
-          </div>
+        <div class="skill">
+          <h3 class="h3">Sedang dikembangkan</h3>
+          <p class="sub">Keterampilan digital untuk membangun website dan solusi praktis.</p>
+          <ul class="tools"><li><svg class="ic"><use href="#i-code"/></svg>Vibe coding</li><li><svg class="ic"><use href="#i-layout"/></svg>Perancangan antarmuka web (UI/UX)</li><li><svg class="ic"><use href="#i-spark"/></svg>Tools AI untuk landing page dan alur kerja</li></ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Experience Section -->
-  <section id="experience" class="border-b border-brand-slate/30 dark:border-brand-slate/20 py-16 md:py-20 reveal">
-    <div class="mx-auto max-w-5xl px-6">
-      <div class="mb-12">
-        <h2 data-i18n="exp_kicker" class="text-sm font-bold uppercase tracking-widest text-brand-sage dark:text-brand-sky">Riwayat Karier</h2>
-        <p data-i18n="exp_title" class="mt-2 text-2xl font-bold text-brand-ink dark:text-white sm:text-3xl">Pengalaman Kerja Sebelumnya</p>
-      </div>
-
-      <div class="grid gap-6 md:grid-cols-2">
-        <!-- Card 1 -->
-        <div class="rounded-2xl border border-brand-slate/40 bg-white/80 dark:border-brand-slate/25 dark:bg-brand-darkcard p-6 shadow-sm transition hover:border-brand-sky">
-          <span data-i18n="exp1_tag" class="inline-block rounded-md bg-brand-ice/70 dark:bg-brand-sky/20 px-2.5 py-1 text-xs font-semibold text-brand-ink dark:text-brand-ice">
-            Logistik &amp; Administrasi
-          </span>
-          <h3 class="mt-3 text-lg font-bold text-brand-ink dark:text-white">Warehouse Admin</h3>
-          <p class="text-sm font-medium text-brand-sage dark:text-brand-slate">PT IDexpress Service Solution</p>
-          <p data-i18n="exp1_desc" class="mt-3 text-sm leading-relaxed text-brand-sage dark:text-brand-slate">
-            Mengelola pencatatan data keluar-masuk paket/barang, rekapitulasi administrasi operasional
-            gudang, serta memastikan akurasi data pengiriman.
-          </p>
-        </div>
-
-        <!-- Card 2 -->
-        <div class="rounded-2xl border border-brand-slate/40 bg-white/80 dark:border-brand-slate/25 dark:bg-brand-darkcard p-6 shadow-sm transition hover:border-brand-sky">
-          <span data-i18n="exp2_tag" class="inline-block rounded-md bg-brand-sky/50 dark:bg-brand-sky/20 px-2.5 py-1 text-xs font-semibold text-brand-ink dark:text-brand-ice">
-            Hospitality &amp; Transaksi
-          </span>
-          <h3 data-i18n="exp2_role" class="mt-3 text-lg font-bold text-brand-ink dark:text-white">Kasir</h3>
-          <p class="text-sm font-medium text-brand-sage dark:text-brand-slate">Foxy Spa PIK Elang Laut</p>
-          <p data-i18n="exp2_desc" class="mt-3 text-sm leading-relaxed text-brand-sage dark:text-brand-slate">
-            Menangani proses pembayaran pelanggan, pencatatan laporan transaksi harian, serta menjaga
-            kerapian administrasi kas dan pelayanan front-desk.
-          </p>
-        </div>
-
-        <!-- Card 3 -->
-        <div class="rounded-2xl border border-brand-slate/40 bg-white/80 dark:border-brand-slate/25 dark:bg-brand-darkcard p-6 shadow-sm transition hover:border-brand-sky">
-          <span data-i18n="exp3_tag" class="inline-block rounded-md bg-brand-slate/30 dark:bg-brand-slate/20 px-2.5 py-1 text-xs font-semibold text-brand-ink dark:text-brand-ice">
-            F&amp;B Service &amp; POS
-          </span>
-          <h3 data-i18n="exp3_role" class="mt-3 text-lg font-bold text-brand-ink dark:text-white">Kasir</h3>
-          <p class="text-sm font-medium text-brand-sage dark:text-brand-slate">The Holy Crab &amp; Holy Smokes</p>
-          <p data-i18n="exp3_desc" class="mt-3 text-sm leading-relaxed text-brand-sage dark:text-brand-slate">
-            Mengoperasikan sistem kasir (POS) di lingkungan restoran dengan ritme cepat, memastikan
-            ketepatan tagihan, dan koordinasi layanan pelanggan.
-          </p>
-        </div>
-
-        <!-- Card 4 -->
-        <div class="rounded-2xl border border-brand-slate/40 bg-white/80 dark:border-brand-slate/25 dark:bg-brand-darkcard p-6 shadow-sm transition hover:border-brand-sky">
-          <span data-i18n="exp4_tag" class="inline-block rounded-md bg-brand-ice/70 dark:bg-brand-sky/20 px-2.5 py-1 text-xs font-semibold text-brand-ink dark:text-brand-ice">
-            Kitchen Operations
-          </span>
-          <h3 class="mt-3 text-lg font-bold text-brand-ink dark:text-white">Dishwasher</h3>
-          <p class="text-sm font-medium text-brand-sage dark:text-brand-slate">Song Fa Bak Kut Teh</p>
-          <p data-i18n="exp4_desc" class="mt-3 text-sm leading-relaxed text-brand-sage dark:text-brand-slate">
-            Menjaga kebersihan, sanitasi peralatan dapur dan makan, serta mendukung kelancaran alur
-            operasional tim dapur sesuai standar kebersihan restoran.
-          </p>
+  <section id="kontak" class="band on-dark" aria-labelledby="t-kontak">
+    <div class="wrap contact">
+      <div class="info">
+        <div class="head" style="margin-bottom:.5rem"><span class="badge"><svg class="ic"><use href="#i-mail"/></svg></span><h2 class="h2" id="t-kontak">Kontak</h2></div>
+        <p class="lead">Punya pertanyaan atau ingin berdiskusi? Hubungi saya lewat WhatsApp atau email.</p>
+        <a class="btn lime" href="https://wa.me/62895600748096" target="_blank" rel="noopener"><svg class="ic"><use href="#i-wa"/></svg>WhatsApp +62 895 6007 48096</a>
+        <div class="mailrow">
+          <svg class="ic" style="color:var(--lime)"><use href="#i-mail"/></svg>
+          <a class="mail" href="mailto:derrytrihartono@gmail.com">derrytrihartono@gmail.com</a>
+          <button class="btn ghost" type="button" id="copymail" style="min-height:44px;padding:.45rem 1.1rem"><svg class="ic"><use href="#i-copy"/></svg>Salin email</button>
         </div>
       </div>
+      <form id="cform" novalidate>
+        <div class="field"><label for="f-nama">Nama</label><input id="f-nama" name="nama" autocomplete="name" placeholder="Nama Anda" required></div>
+        <div class="field"><label for="f-email">Email Anda</label><input id="f-email" name="email" type="email" autocomplete="email" placeholder="nama@email.com" required></div>
+        <div class="field"><label for="f-pesan">Pesan</label><textarea id="f-pesan" name="pesan" placeholder="Tulis pesan Anda di sini" required></textarea></div>
+        <div class="flex flex-wrap items-center gap-3">
+          <button class="btn" type="submit"><svg class="ic"><use href="#i-mail"/></svg>Kirim lewat email</button>
+          <button class="btn ghost" type="button" id="copymsg"><svg class="ic"><use href="#i-copy"/></svg>Salin pesan</button>
+        </div>
+        <p class="status" id="status" role="status" aria-live="polite"></p>
+      </form>
     </div>
   </section>
+</main>
 
-  <!-- Skills Section -->
-  <section id="skills" class="border-b border-brand-slate/30 dark:border-brand-slate/20 py-16 md:py-20 reveal">
-    <div class="mx-auto max-w-5xl px-6">
-      <div class="mb-10">
-        <h2 data-i18n="skills_kicker" class="text-sm font-bold uppercase tracking-widest text-brand-sage dark:text-brand-sky">Keahlian</h2>
-        <p data-i18n="skills_title" class="mt-2 text-2xl font-bold text-brand-ink dark:text-white sm:text-3xl">Kemampuan &amp; Eksplorasi Tools</p>
-      </div>
+<footer class="on-dark">
+  <div class="wrap">
+    <p>&copy; 2026 Deri Tri Hartono</p>
+    <nav aria-label="Navigasi footer"><a href="#beranda">Beranda</a><a href="#tentang">Tentang</a><a href="#karier">Karier</a><a href="#keahlian">Keahlian</a><a href="#kontak">Kontak</a></nav>
+  </div>
+</footer>
 
-      <div class="grid gap-6 md:grid-cols-2">
-        <!-- Office & Data -->
-        <div class="rounded-2xl border border-brand-slate/40 bg-white/80 dark:border-brand-slate/25 dark:bg-brand-darkcard p-6 shadow-sm">
-          <h3 data-i18n="skills_cat1" class="text-base font-bold text-brand-ink dark:text-white">Administrasi &amp; Perkantoran</h3>
-          <p data-i18n="skills_cat1_sub" class="mt-1 text-xs text-brand-sage dark:text-brand-slate">Pengolahan dokumen, tabel data, dan rekap laporan</p>
-          <div class="mt-5 flex flex-wrap gap-2.5">
-            <span class="rounded-lg border border-brand-slate/40 bg-brand-snow dark:border-brand-slate/25 dark:bg-brand-darkbg px-3.5 py-2 text-sm font-medium text-brand-ink dark:text-brand-snow">
-              Microsoft Word <span class="text-xs font-semibold text-brand-sage dark:text-brand-sky">(Basic)</span>
-            </span>
-            <span class="rounded-lg border border-brand-slate/40 bg-brand-snow dark:border-brand-slate/25 dark:bg-brand-darkbg px-3.5 py-2 text-sm font-medium text-brand-ink dark:text-brand-snow">
-              Microsoft Excel <span class="text-xs font-semibold text-brand-sage dark:text-brand-sky">(Basic)</span>
-            </span>
-            <span class="rounded-lg border border-brand-slate/40 bg-brand-snow dark:border-brand-slate/25 dark:bg-brand-darkbg px-3.5 py-2 text-sm font-medium text-brand-ink dark:text-brand-snow">
-              Google Spreadsheet <span class="text-xs font-semibold text-brand-sage dark:text-brand-sky">(Basic)</span>
-            </span>
-          </div>
-        </div>
+<a class="btn lime wa-fab" href="https://wa.me/62895600748096" target="_blank" rel="noopener" aria-label="Chat WhatsApp Deri"><svg class="ic"><use href="#i-wa"/></svg><span>WhatsApp</span></a>
 
-        <!-- Digital & Vibe Coding -->
-        <div class="rounded-2xl border border-brand-slate/40 bg-white/80 dark:border-brand-slate/25 dark:bg-brand-darkcard p-6 shadow-sm">
-          <h3 data-i18n="skills_cat2" class="text-base font-bold text-brand-ink dark:text-white">Web &amp; AI Exploration</h3>
-          <p data-i18n="skills_cat2_sub" class="mt-1 text-xs text-brand-sage dark:text-brand-slate">Bidang yang sedang dipelajari dan dipraktikkan</p>
-          <div class="mt-5 flex flex-wrap gap-2.5">
-            <span class="rounded-lg border border-brand-sky bg-brand-ice/50 dark:bg-brand-sky/20 px-3.5 py-2 text-sm font-semibold text-brand-ink dark:text-brand-ice">
-              Vibe Coding &amp; AI Tools
-            </span>
-            <span class="rounded-lg border border-brand-slate/40 bg-brand-snow dark:border-brand-slate/25 dark:bg-brand-darkbg px-3.5 py-2 text-sm font-medium text-brand-ink dark:text-brand-snow">
-              HTML &amp; CSS
-            </span>
-            <span class="rounded-lg border border-brand-slate/40 bg-brand-snow dark:border-brand-slate/25 dark:bg-brand-darkbg px-3.5 py-2 text-sm font-medium text-brand-ink dark:text-brand-snow">
-              Figma UI/UX
-            </span>
-            <span class="rounded-lg border border-brand-slate/40 bg-brand-snow dark:border-brand-slate/25 dark:bg-brand-darkbg px-3.5 py-2 text-sm font-medium text-brand-ink dark:text-brand-snow">
-              GitHub Pages
-            </span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+<script>
+(function(){
+  /* active page indicator */
+  var box=document.getElementById('links'),links=[].slice.call(box.querySelectorAll('a')),ids=links.map(function(a){return a.getAttribute('href').slice(1)});
+  var secs=ids.map(function(i){return document.getElementById(i)});
+  function setActive(id){links.forEach(function(a){var on=a.getAttribute('href')==='#'+id;if(on){a.setAttribute('aria-current','true');
+    if(box.scrollWidth>box.clientWidth)box.scrollTo({left:a.offsetLeft-box.clientWidth/2+a.clientWidth/2,behavior:'smooth'})}else a.removeAttribute('aria-current')})}
+  function spy(){var y=innerHeight*.4,cur=ids[0];secs.forEach(function(s,i){if(s&&s.getBoundingClientRect().top<=y)cur=ids[i]});
+    if(innerHeight+scrollY>=document.documentElement.scrollHeight-4)cur=ids[ids.length-1];setActive(cur)}
+  var tick=false;addEventListener('scroll',function(){if(tick)return;tick=true;requestAnimationFrame(function(){tick=false;spy()})},{passive:true});
+  links.forEach(function(a){a.addEventListener('click',function(){setActive(a.getAttribute('href').slice(1))})});spy();
 
-  <!-- Projects Section -->
-  <section id="projects" class="border-b border-brand-slate/30 dark:border-brand-slate/20 py-16 md:py-20 reveal">
-    <div class="mx-auto max-w-5xl px-6">
-      <div class="mb-10 flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
-        <div>
-          <h2 data-i18n="proj_kicker" class="text-sm font-bold uppercase tracking-widest text-brand-sage dark:text-brand-sky">Portofolio Web</h2>
-          <p data-i18n="proj_title" class="mt-2 text-2xl font-bold text-brand-ink dark:text-white sm:text-3xl">Proyek &amp; Eksperimen</p>
-        </div>
-        <p data-i18n="proj_note" class="text-sm text-brand-sage dark:text-brand-slate">Diperbarui secara bertahap seiring proyek selesai</p>
-      </div>
-
-      <div class="grid gap-6 md:grid-cols-2">
-        <!-- Project 1 -->
-        <div class="flex flex-col justify-between rounded-2xl border border-brand-slate/40 bg-white/80 dark:border-brand-slate/25 dark:bg-brand-darkcard p-6 shadow-sm">
-          <div>
-            <div class="flex items-center justify-between">
-              <span class="text-xs font-bold uppercase tracking-wider text-brand-sage dark:text-brand-sky">Landing Page</span>
-              <span class="rounded-full bg-brand-ice dark:bg-brand-sky/20 px-2.5 py-0.5 text-xs font-semibold text-brand-ink dark:text-brand-ice">Live</span>
-            </div>
-            <h3 class="mt-3 text-lg font-bold text-brand-ink dark:text-white">Promotional Landing Page — CBN Fiber</h3>
-            <p data-i18n="proj1_desc" class="mt-2 text-sm leading-relaxed text-brand-sage dark:text-brand-slate">
-              Halaman penawaran layanan internet fiber dengan informasi paket, area cakupan, dan tombol
-              konversi langsung ke WhatsApp sales.
-            </p>
-          </div>
-          <div class="mt-6 pt-4 border-t border-brand-slate/30 dark:border-brand-slate/20 flex items-center justify-between text-xs text-brand-sage dark:text-brand-slate">
-            <span>HTML • CSS • GitHub Pages</span>
-            <a
-              href="https://putput-fr99.github.io/Putri-CBN/"
-              target="_blank"
-              rel="noopener noreferrer"
-              data-i18n="proj1_link"
-              class="font-bold text-brand-ink dark:text-brand-sky hover:underline"
-            >
-              Lihat Live &rarr;
-            </a>
-          </div>
-        </div>
-
-        <!-- Project 2 -->
-        <div class="flex flex-col justify-between rounded-2xl border border-brand-slate/40 bg-white/80 dark:border-brand-slate/25 dark:bg-brand-darkcard p-6 shadow-sm">
-          <div>
-            <div class="flex items-center justify-between">
-              <span class="text-xs font-bold uppercase tracking-wider text-brand-sage dark:text-brand-sky">UI/UX &amp; Web</span>
-              <span class="rounded-full bg-brand-slate/30 dark:bg-brand-slate/20 px-2.5 py-0.5 text-xs font-semibold text-brand-ink dark:text-brand-ice">In Progress</span>
-            </div>
-            <h3 data-i18n="proj2_title" class="mt-3 text-lg font-bold text-brand-ink dark:text-white">Company Profile Ekspor-Impor</h3>
-            <p data-i18n="proj2_desc" class="mt-2 text-sm leading-relaxed text-brand-sage dark:text-brand-slate">
-              Perancangan landing page perusahaan ekspor-impor yang mencakup layanan correspondence,
-              payment, logistic, customs clearance, dan regulation handling.
-            </p>
-          </div>
-          <div class="mt-6 pt-4 border-t border-brand-slate/30 dark:border-brand-slate/20 flex items-center justify-between text-xs text-brand-sage dark:text-brand-slate">
-            <span>Figma • SDLC • Parallax Concept</span>
-            <span data-i18n="proj2_status" class="font-medium">Tahap Desain &amp; PRD</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section: Email + Barcode WhatsApp Saja -->
-  <section id="contact" class="py-16 md:py-24 reveal">
-    <div class="mx-auto max-w-5xl px-6">
-      <div class="rounded-3xl border border-brand-slate/40 bg-gradient-to-br from-white via-brand-snow to-brand-ice/40 dark:border-brand-slate/25 dark:from-brand-darkcard dark:via-brand-darkcard dark:to-brand-darkbg p-8 shadow-sm md:p-12">
-        <div class="grid items-center gap-8 md:grid-cols-3">
-          <div class="md:col-span-2">
-            <h2 data-i18n="contact_kicker" class="text-sm font-bold uppercase tracking-widest text-brand-sage dark:text-brand-sky">Kontak</h2>
-            <p data-i18n="contact_title" class="mt-2 text-2xl font-bold text-brand-ink dark:text-white sm:text-3xl">Mari Terhubung</p>
-            <p data-i18n="contact_desc" class="mt-3 text-brand-sage dark:text-brand-slate leading-relaxed">
-              Silakan pindai kode QR WhatsApp di samping untuk terhubung langsung, atau kirim email untuk
-              diskusi pekerjaan maupun kolaborasi proyek digital.
-            </p>
-
-            <!-- Email Box -->
-            <div class="mt-6 max-w-md">
-              <div class="flex items-center justify-between rounded-2xl border border-brand-slate/40 bg-white dark:border-brand-slate/25 dark:bg-brand-darkbg p-4">
-                <div class="min-w-0 pr-3">
-                  <p class="text-xs font-medium text-brand-sage dark:text-brand-slate">Email</p>
-                  <a
-                    href="mailto:derrytrihartono@gmail.com"
-                    class="mt-1 block truncate text-sm font-bold text-brand-ink dark:text-white hover:underline"
-                  >
-                    derrytrihartono@gmail.com
-                  </a>
-                </div>
-                <button
-                  id="copy-email-btn"
-                  onclick="copyText('derrytrihartono@gmail.com', this)"
-                  data-i18n="btn_copy"
-                  class="shrink-0 rounded-lg bg-brand-ice/70 dark:bg-brand-sky/20 px-3.5 py-2 text-xs font-semibold text-brand-ink dark:text-brand-ice transition hover:bg-brand-sky dark:hover:bg-brand-sky/30"
-                >
-                  Salin
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Barcode / QR Code WhatsApp -->
-          <div class="flex flex-col items-center justify-center rounded-2xl border border-brand-slate/40 bg-white dark:border-brand-slate/25 dark:bg-brand-darkbg p-5 text-center shadow-sm">
-            <a
-              href="https://wa.me/62895600748096"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="Klik atau Scan QR WhatsApp"
-              class="overflow-hidden rounded-xl border border-brand-slate/20 bg-white p-2 transition hover:scale-[1.02]"
-            >
-              <img
-                src="qr-wa.png"
-                onerror="this.onerror=null;this.src='https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https://wa.me/62895600748096';"
-                alt="QR Code WhatsApp Deri Tri Hartono"
-                class="h-40 w-40 object-contain"
-              />
-            </a>
-            <p data-i18n="qr_title" class="mt-3 text-xs font-bold text-brand-ink dark:text-white">Scan QR WhatsApp</p>
-            <p data-i18n="qr_sub" class="mt-0.5 text-[11px] text-brand-sage dark:text-brand-slate">Arahkan kamera HP untuk chat langsung</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="border-t border-brand-slate/30 dark:border-brand-slate/20 py-8 text-center text-xs text-brand-sage dark:text-brand-slate">
-    <div class="mx-auto max-w-5xl px-6">
-      <p data-i18n="footer_text">&copy; 2026 Deri Tri Hartono. Dibuat dengan semangat eksplorasi AI &amp; Vibe Coding.</p>
-    </div>
-  </footer>
-
-  <!-- Script: Scroll Reveal, Copy Email, Theme Toggle, & Language Switcher (ID / EN) -->
-  <script>
-    // 1. Scroll Reveal
-    const reveals = document.querySelectorAll('.reveal');
-    const revealOnScroll = () => {
-      const windowHeight = window.innerHeight;
-      reveals.forEach((el) => {
-        const elementTop = el.getBoundingClientRect().top;
-        if (elementTop < windowHeight - 80) {
-          el.classList.add('active');
-        }
-      });
-    };
-    window.addEventListener('scroll', revealOnScroll);
-    revealOnScroll();
-
-    // 2. Theme Toggle (Light / Dark)
-    const htmlEl = document.documentElement;
-    const iconSun = document.getElementById('icon-sun');
-    const iconMoon = document.getElementById('icon-moon');
-
-    function applyTheme(theme) {
-      if (theme === 'dark') {
-        htmlEl.classList.add('dark');
-        iconSun.classList.remove('hidden');
-        iconMoon.classList.add('hidden');
-      } else {
-        htmlEl.classList.remove('dark');
-        iconSun.classList.add('hidden');
-        iconMoon.classList.remove('hidden');
-      }
-      localStorage.setItem('portfolio_theme', theme);
-    }
-
-    function toggleTheme() {
-      const isDark = htmlEl.classList.contains('dark');
-      applyTheme(isDark ? 'light' : 'dark');
-    }
-
-    const savedTheme = localStorage.getItem('portfolio_theme') || 'light';
-    applyTheme(savedTheme);
-
-    // 3. Language Dictionary (ID / EN)
-    const translations = {
-      id: {
-        nav_about: 'Tentang',
-        nav_exp: 'Pengalaman',
-        nav_skills: 'Kemampuan',
-        nav_projects: 'Proyek',
-        nav_contact: 'Kontak',
-        nav_cta: 'Hubungi Saya',
-        hero_badge: 'Open for Opportunities & Collaboration',
-        hero_greeting: 'Hello, nama saya',
-        hero_desc:
-          'Saya adalah <strong class="font-semibold text-brand-ink dark:text-white">Aspiring Vibe Coder</strong> dan <strong class="font-semibold text-brand-ink dark:text-white">AI Enthusiast</strong> yang berfokus merancang serta membangun website modern maupun solusi digital yang praktis.',
-        about_kicker: 'Tentang Saya',
-        about_title: 'Latar Belakang & Pendidikan',
-        about_p1:
-          'Memiliki latar belakang pengalaman kerja di bidang operasional, layanan pelanggan, kasir, dan administrasi gudang yang melatih ketelitian data, kecepatan kerja, serta kedisiplinan terhadap prosedur.',
-        about_p2:
-          'Saat ini saya aktif mengembangkan kemampuan di dunia <span class="text-brand-ink dark:text-white font-semibold">vibe coding</span>, perancangan antarmuka web (UI/UX), serta mengikuti perkembangan tools AI untuk membantu pembuatan <span class="text-brand-ink dark:text-white font-semibold">landing page</span> dan efisiensi alur kerja digital.',
-        edu_label: 'Pendidikan Terakhir',
-        edu_sub: 'Sekolah Menengah Atas',
-        exp_kicker: 'Riwayat Karier',
-        exp_title: 'Pengalaman Kerja Sebelumnya',
-        exp1_tag: 'Logistik & Administrasi',
-        exp1_desc:
-          'Mengelola pencatatan data keluar-masuk paket/barang, rekapitulasi administrasi operasional gudang, serta memastikan akurasi data pengiriman.',
-        exp2_tag: 'Hospitality & Transaksi',
-        exp2_role: 'Kasir',
-        exp2_desc:
-          'Menangani proses pembayaran pelanggan, pencatatan laporan transaksi harian, serta menjaga kerapian administrasi kas dan pelayanan front-desk.',
-        exp3_tag: 'F&B Service & POS',
-        exp3_role: 'Kasir',
-        exp3_desc:
-          'Mengoperasikan sistem kasir (POS) di lingkungan restoran dengan ritme cepat, memastikan ketepatan tagihan, dan koordinasi layanan pelanggan.',
-        exp4_tag: 'Kitchen Operations',
-        exp4_desc:
-          'Menjaga kebersihan, sanitasi peralatan dapur dan makan, serta mendukung kelancaran alur operasional tim dapur sesuai standar kebersihan restoran.',
-        skills_kicker: 'Keahlian',
-        skills_title: 'Kemampuan & Eksplorasi Tools',
-        skills_cat1: 'Administrasi & Perkantoran',
-        skills_cat1_sub: 'Pengolahan dokumen, tabel data, dan rekap laporan',
-        skills_cat2: 'Web & AI Exploration',
-        skills_cat2_sub: 'Bidang yang sedang dipelajari dan dipraktikkan',
-        proj_kicker: 'Portofolio Web',
-        proj_title: 'Proyek & Eksperimen',
-        proj_note: 'Diperbarui secara bertahap seiring proyek selesai',
-        proj1_desc:
-          'Halaman penawaran layanan internet fiber dengan informasi paket, area cakupan, dan tombol konversi langsung ke WhatsApp sales.',
-        proj1_link: 'Lihat Live &rarr;',
-        proj2_title: 'Company Profile Ekspor-Impor',
-        proj2_desc:
-          'Perancangan landing page perusahaan ekspor-impor yang mencakup layanan correspondence, payment, logistic, customs clearance, dan regulation handling.',
-        proj2_status: 'Tahap Desain & PRD',
-        contact_kicker: 'Kontak',
-        contact_title: 'Mari Terhubung',
-        contact_desc:
-          'Silakan pindai kode QR WhatsApp di samping untuk terhubung langsung, atau kirim email untuk diskusi pekerjaan maupun kolaborasi proyek digital.',
-        btn_copy: 'Salin',
-        btn_copied: 'Tersalin!',
-        qr_title: 'Scan QR WhatsApp',
-        qr_sub: 'Arahkan kamera HP untuk chat langsung',
-        footer_text: '&copy; 2026 Deri Tri Hartono. Dibuat dengan semangat eksplorasi AI &amp; Vibe Coding.',
-      },
-      en: {
-        nav_about: 'About',
-        nav_exp: 'Experience',
-        nav_skills: 'Skills',
-        nav_projects: 'Projects',
-        nav_contact: 'Contact',
-        nav_cta: 'Contact Me',
-        hero_badge: 'Open for Opportunities & Collaboration',
-        hero_greeting: 'Hello, my name is',
-        hero_desc:
-          'I am an <strong class="font-semibold text-brand-ink dark:text-white">Aspiring Vibe Coder</strong> and <strong class="font-semibold text-brand-ink dark:text-white">AI Enthusiast</strong> focused on designing and building modern websites as well as practical digital solutions.',
-        about_kicker: 'About Me',
-        about_title: 'Background & Education',
-        about_p1:
-          'Experienced in operational roles, customer service, cashiering, and warehouse administration—building strong habits in data accuracy, fast-paced execution, and procedural discipline.',
-        about_p2:
-          'Currently developing skills in <span class="text-brand-ink dark:text-white font-semibold">vibe coding</span>, web interface design (UI/UX), and exploring AI tools to build effective <span class="text-brand-ink dark:text-white font-semibold">landing pages</span> and streamlined digital workflows.',
-        edu_label: 'Latest Education',
-        edu_sub: 'Senior High School',
-        exp_kicker: 'Career History',
-        exp_title: 'Previous Work Experience',
-        exp1_tag: 'Logistics & Administration',
-        exp1_desc:
-          'Managed inbound and outbound package records, warehouse operational administration reports, and ensured shipping data accuracy.',
-        exp2_tag: 'Hospitality & Transactions',
-        exp2_role: 'Cashier',
-        exp2_desc:
-          'Handled customer payments, daily transaction reconciliation, cash administration, and front-desk hospitality service.',
-        exp3_tag: 'F&B Service & POS',
-        exp3_role: 'Cashier',
-        exp3_desc:
-          'Operated point-of-sale (POS) systems in a fast-paced restaurant environment, ensuring billing accuracy and smooth customer service coordination.',
-        exp4_tag: 'Kitchen Operations',
-        exp4_desc:
-          'Maintained kitchenware and dining utensil sanitation while supporting smooth kitchen workflow in compliance with restaurant hygiene standards.',
-        skills_kicker: 'Skills',
-        skills_title: 'Capabilities & Tool Exploration',
-        skills_cat1: 'Office & Administration',
-        skills_cat1_sub: 'Document processing, data tables, and report summaries',
-        skills_cat2: 'Web & AI Exploration',
-        skills_cat2_sub: 'Areas currently being studied and practiced',
-        proj_kicker: 'Web Portfolio',
-        proj_title: 'Projects & Experiments',
-        proj_note: 'Continuously updated as new projects are completed',
-        proj1_desc:
-          'Fiber internet promotional landing page featuring package details, coverage areas, and direct WhatsApp sales conversion.',
-        proj1_link: 'View Live &rarr;',
-        proj2_title: 'Export-Import Company Profile',
-        proj2_desc:
-          'Landing page design for an export-import company covering correspondence, payment, logistics, customs clearance, and regulation handling services.',
-        proj2_status: 'Design & PRD Phase',
-        contact_kicker: 'Contact',
-        contact_title: "Let's Connect",
-        contact_desc:
-          'Scan the WhatsApp QR code beside to chat directly, or send an email for job inquiries and digital project collaborations.',
-        btn_copy: 'Copy',
-        btn_copied: 'Copied!',
-        qr_title: 'Scan WhatsApp QR',
-        qr_sub: 'Point your phone camera to chat directly',
-        footer_text: '&copy; 2026 Deri Tri Hartono. Built with AI exploration &amp; Vibe Coding.',
-      },
-    };
-
-    let currentLang = localStorage.getItem('portfolio_lang') || 'id';
-
-    function setLanguage(lang) {
-      currentLang = lang;
-      localStorage.setItem('portfolio_lang', lang);
-      htmlEl.setAttribute('lang', lang);
-
-      document.querySelectorAll('[data-i18n]').forEach((el) => {
-        const key = el.getAttribute('data-i18n');
-        if (translations[lang][key]) {
-          el.innerHTML = translations[lang][key];
-        }
-      });
-
-      const btnId = document.getElementById('btn-lang-id');
-      const btnEn = document.getElementById('btn-lang-en');
-
-      if (lang === 'id') {
-        btnId.className = 'rounded-md bg-brand-sky px-2.5 py-1 text-xs font-bold text-brand-ink transition';
-        btnEn.className = 'rounded-md px-2.5 py-1 text-xs font-bold text-brand-sage dark:text-brand-slate hover:text-brand-ink dark:hover:text-white transition';
-      } else {
-        btnEn.className = 'rounded-md bg-brand-sky px-2.5 py-1 text-xs font-bold text-brand-ink transition';
-        btnId.className = 'rounded-md px-2.5 py-1 text-xs font-bold text-brand-sage dark:text-brand-slate hover:text-brand-ink dark:hover:text-white transition';
-      }
-    }
-
-    setLanguage(currentLang);
-
-    // 4. Copy Email Helper
-    function copyText(text, btn) {
-      navigator.clipboard.writeText(text).then(() => {
-        btn.innerText = translations[currentLang].btn_copied;
-        setTimeout(() => {
-          btn.innerText = translations[currentLang].btn_copy;
-        }, 1800);
-      });
-    }
-  </script>
+  /* contact: copy + mailto with manual fallbacks */
+  var EMAIL='derrytrihartono@gmail.com',st=document.getElementById('status');
+  function say(html,err){st.className='status'+(err?' err':'');st.innerHTML=html}
+  function copy(t){return new Promise(function(res){
+    function legacy(){try{var ta=document.createElement('textarea');ta.value=t;ta.setAttribute('readonly','');ta.style.cssText='position:fixed;opacity:0;top:0';document.body.appendChild(ta);ta.select();var ok=document.execCommand('copy');ta.remove();res(!!ok)}catch(e){res(false)}}
+    if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(t).then(function(){res(true)},legacy);else legacy()})}
+  document.getElementById('copymail').addEventListener('click',function(){copy(EMAIL).then(function(ok){
+    say(ok?'Email berhasil disalin.':'Penyalinan otomatis gagal. Salin manual: <span class="sel">'+EMAIL+'</span>',!ok)})});
+  var form=document.getElementById('cform');
+  function data(){return{n:form.nama.value.trim(),e:form.email.value.trim(),p:form.pesan.value.trim()}}
+  function valid(d){if(!d.n||!d.e||!d.p){say('Lengkapi nama, email, dan pesan terlebih dahulu.',true);return false}
+    if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(d.e)){say('Format email belum benar. Periksa lagi ya.',true);return false}return true}
+  function body(d){return d.p+'\n\nSalam,\n'+d.n+' ('+d.e+')'}
+  form.addEventListener('submit',function(ev){ev.preventDefault();var d=data();if(!valid(d))return;
+    var url='mailto:'+EMAIL+'?subject='+encodeURIComponent('Pesan dari '+d.n+' lewat CV online')+'&body='+encodeURIComponent(body(d));
+    var a=document.createElement('a');a.href=url;a.target='_top';document.body.appendChild(a);a.click();a.remove();
+    say('Aplikasi email akan terbuka. Jika tidak terbuka, klik "Salin pesan" lalu kirim manual ke <span class="sel">'+EMAIL+'</span> atau gunakan tombol WhatsApp.')});
+  document.getElementById('copymsg').addEventListener('click',function(){var d=data();if(!valid(d))return;
+    copy('Kepada: '+EMAIL+'\n\n'+body(d)).then(function(ok){say(ok?'Pesan disalin. Tempel di email atau WhatsApp.':'Penyalinan otomatis gagal. Salin teks pesan Anda secara manual, lalu kirim ke <span class="sel">'+EMAIL+'</span>.',!ok)})});
+})();
+</script>
 </body>
 </html>
