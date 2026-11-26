@@ -16,7 +16,7 @@
   --egg:#8fd8d6;--egg-soft:#e4f6f5;--egg-deep:#52bdba;
   --lime:#c9f31d;
   --muted:#3a3a3a;--line:rgba(10,10,10,.14);
-  --font:"Plus Jakarta Sans","Segoe UI",system-ui,-apple-system,sans-serif;
+  --font:"sans-serif","monospace",system-ui,-apple-system,sans-serif;
   box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)
 }
 *,*::before,*::after{box-sizing:inherit}
@@ -56,29 +56,29 @@ h1,h2,h3,p,ul{margin:0}ul{padding:0;list-style:none}a{color:inherit}
 .band.on-dark .lead,.band.on-dark .sub,.band.on-dark .meta{color:rgba(255,255,255,.82)}
 .rule{border-top:1px solid var(--line)}
 
-/* ===== navbar ===== */
-.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:var(--white);border-bottom:1px solid var(--line)}
-.nav .wrap{display:flex;align-items:center;gap:1rem;height:72px}
-.brand{display:flex;align-items:center;gap:.7rem;text-decoration:none;flex:none}
-.brand svg{width:42px;height:42px;display:block}
-.brand span{font-weight:800;font-size:1.125rem;letter-spacing:-.02em;white-space:nowrap}
-.links{display:flex;gap:.2rem;margin-left:auto;overflow-x:auto;scrollbar-width:none;padding:2px}
+/* ===== navbar: Floating Pill ===== */
+.nav{position:fixed;top:calc(env(safe-area-inset-top,0px) + 12px);left:0;right:0;z-index:50;
+  display:flex;justify-content:center;padding:0 .75rem;pointer-events:none}
+.nav .wrap{pointer-events:auto;width:auto;max-width:min(100%,640px);margin:0;padding:.3rem;height:auto;
+display:flex;align-items:center;background:rgb(183, 224, 16);
+-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
+border:2px solid var(--black);border-radius:999px;box-shadow:0 4px 0 var(--black)}
+.links{display:flex;gap:.2rem;margin:0;min-width:0;overflow-x:auto;scrollbar-width:none;padding:2px}
 .links::-webkit-scrollbar{display:none}
 .links a{flex:none;text-decoration:none;font-weight:600;font-size:1rem;padding:.5rem 1rem;border-radius:999px;transition:background .2s,color .2s,transform .15s}
 .links a:hover{background:var(--egg-soft)}
 .links a[aria-current="true"]{background:var(--black);color:var(--white)}
-.nav-cv{flex:none;min-height:44px;padding:.45rem 1.2rem;font-size:1rem;white-space:nowrap;box-shadow:0 3px 0 var(--black)}
-.nav-cv:hover{box-shadow:0 5px 0 var(--black)}
-.nav-cv:active{box-shadow:0 1px 0 var(--black);transform:translateY(2px)}
-@media(max-width:720px){.brand span{display:none}}
-@media(max-width:560px){.nav-cv{padding:.45rem .9rem}.nav-cv .full{display:none}}
 
 /* ===== buttons ===== */
+.cv-btn{align-self:flex-start;min-height:var(--cv-h);padding:.4rem var(--cv-px);font-size:var(--cv-fs);gap:.45rem;box-shadow:0 3px 0 var(--black)}
+.cv-btn:hover{box-shadow:0 5px 0 var(--black)}
+.cv-btn:active{box-shadow:0 1px 0 var(--black);transform:translateY(2px)}
+.cv-btn .ic{width:1.1em;height:1.1em}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;min-height:52px;padding:.75rem 1.5rem;border-radius:999px;font:700 1.0625rem var(--font);
   text-decoration:none;cursor:pointer;border:2px solid var(--black);background:var(--egg);color:var(--black);transition:transform .15s,background .2s,box-shadow .2s}
 .btn:hover{background:var(--egg-deep);transform:translateY(-2px)}
 .btn:active{transform:scale(.95)}
-.btn.lime{background:var(--lime)}.btn.lime:hover{background:#b7e010}
+.btn.lime{background:var(--lime)}.btn.lime:hover{background:rgb(183, 224, 16)}
 .btn.ghost{background:transparent;color:inherit}
 .on-dark .btn{border-color:var(--white)}.on-dark .btn.ghost:hover{background:rgba(255,255,255,.14)}
 .on-dark .btn.lime{border-color:var(--lime)}.on-dark .btn:not(.ghost):not(.lime){color:var(--black)}
@@ -86,7 +86,7 @@ h1,h2,h3,p,ul{margin:0}ul{padding:0;list-style:none}a{color:inherit}
 .wa-fab:active{box-shadow:0 2px 0 var(--black);transform:translateY(4px)}
 
 /* ===== hero ===== */
-.hero{padding:clamp(2.5rem,6vw,5rem) 0 clamp(3rem,6vw,5rem)}
+.hero{padding:calc(clamp(2.5rem,6vw,5rem) + 4.5rem) 0 clamp(3rem,6vw,5rem)}
 .grid12{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:2rem;align-items:center}
 .hero-copy{grid-column:span 7;display:flex;flex-direction:column;gap:1.25rem}
 .hero-photo{grid-column:span 5;display:flex;justify-content:center;align-items:flex-end}
@@ -222,14 +222,11 @@ footer nav{display:flex;gap:1.25rem;flex-wrap:wrap}
 <symbol id="i-copy" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2.5"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></symbol>
 <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M4 21h16"/></symbol>
 <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-11.6 7.1L3 21l1.9-5.4A8 8 0 1 1 21 12z"/></symbol>
+<symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
 </defs></svg>
 
 <header class="nav" role="banner">
   <div class="wrap">
-    <a class="brand" href="#beranda" aria-label="Deri Tri Hartono, ke beranda">
-      <svg viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="12" fill="#0a0a0a"/><text x="24" y="30" text-anchor="middle" font-family="Plus Jakarta Sans,Segoe UI,sans-serif" font-weight="800" font-size="16" fill="#fff">DTH</text><circle cx="39" cy="9" r="4.5" fill="#c9f31d"/></svg>
-      <span>Deri Tri Hartono</span>
-    </a>
     <nav class="links" id="links" aria-label="Navigasi utama">
       <a href="#beranda" aria-current="true">Beranda</a><a href="#tentang">Tentang</a><a href="#pendidikan">Pendidikan</a><a href="#karier">Karier</a><a href="#keahlian">Keahlian</a><a href="#kontak">Kontak</a>
     </nav>
@@ -245,7 +242,9 @@ footer nav{display:flex;gap:1.25rem;flex-wrap:wrap}
           <h1 class="h1" id="nama">Deri Tri Hartono</h1>
           <p class="role"><span class="mark">Aspiring Vibe Coder &amp; AI Enthusiast</span></p>
           <p class="lead">Saya berfokus merancang serta membangun website modern maupun solusi digital yang praktis.</p>
-          <a class="btn lime nav-cv" href="CV_DTH.pdf" download="CV_Deri_Tri_Hartono.pdf" aria-label="Download CV Deri Tri Hartono (PDF)"><svg class="ic" aria-hidden="true"><use href="#i-download"/></svg><span><span class="full">Download </span>CV</span></a>
+          <a class="btn lime cv-btn" href="CV_DTH.pdf" target="_blank" rel="noopener noreferrer" aria-label="Lihat CV Deri Tri Hartono (PDF)">
+           <svg class="ic" aria-hidden="true"><use href="#i-eye"/></svg><span>View CV</span>
+          </a>
         </div>
         <div class="hero-photo">
           <div class="pop"><span class="dot" aria-hidden="true"></span>
@@ -300,7 +299,7 @@ footer nav{display:flex;gap:1.25rem;flex-wrap:wrap}
     <div class="jobs">
       <article class="job reveal"><span class="badge egg sm"><svg class="ic"><use href="#i-receipt"/></svg></span><div class="txt"><h3 class="h3">Kasir</h3><p class="sub">Foxy Spa PIK Elang Laut</p><span class="pill">Hospitality &amp; Transaksi</span><p class="desc">Menangani proses pembayaran pelanggan, pencatatan laporan transaksi harian, serta menjaga kerapian administrasi kas dan pelayanan front-desk.</p></div></article>
       <article class="job reveal"><span class="badge egg sm"><svg class="ic"><use href="#i-receipt"/></svg></span><div class="txt"><h3 class="h3">Kasir</h3><p class="sub">Holy Smokes Pik Avenue</p><span class="pill">F&amp;B Service &amp; POS</span><p class="desc">Mengoperasikan sistem kasir (POS) di lingkungan restoran dengan ritme cepat, memastikan ketepatan tagihan, dan koordinasi layanan pelanggan.</p></div></article>
-      <article class="job reveal"><span class="badge egg sm"><svg class="ic"><use href="#i-utensils"/></svg></span><div class="txt"><h3 class="h3">Dishwasher</h3><p class="sub">SONG FA Bak Kut Teh</p><span class="pill">Kitchen Operations</span><p class="desc">Menjaga kebersihan, sanitasi peralatan dapur dan makan, serta mendukung kelancaran alur operasional tim dapur sesuai standar kebersihan restoran.</p></div></article>
+      <article class="job reveal"><span class="badge egg sm"><svg class="ic"><use href="#i-utensils"/></svg></span><div class="txt"><h3 class="h3">Dishwasher</h3><p class="sub">Song Fa Bak Kut Teh Pik Avenue</p><span class="pill">Kitchen Operations</span><p class="desc">Menjaga kebersihan, sanitasi peralatan dapur dan makan, serta mendukung kelancaran alur operasional tim dapur sesuai standar kebersihan restoran.</p></div></article>
       <article class="job reveal"><span class="badge egg sm"><svg class="ic"><use href="#i-box"/></svg></span><div class="txt"><h3 class="h3">Warehouse Admin</h3><p class="sub">PT IDexpress Service Solution</p><span class="pill">Logistik &amp; Administrasi</span><p class="desc">Mengelola pencatatan data keluar-masuk paket/barang, rekapitulasi administrasi operasional gudang, serta memastikan akurasi data pengiriman.</p></div></article>
     </div>
   </div>
