@@ -166,6 +166,8 @@ footer nav{display:flex;gap:1.25rem;flex-wrap:wrap}
   .pop{width:min(100%,220px)}
   .trust,.jobs,.skills{grid-template-columns:1fr}.trust>div{padding:1.25rem 0 0}
   .two,.contact{gap:2rem}
+  .hero-photo{order:-1}
+  .pop{margin-top:.5rem}
 }
 @media(max-width:560px){.wa-fab span{display:none}.wa-fab{padding:.8rem}.edu .yr{border-right:0;padding-right:0}}
 /* 1. efek tekan di layar sentuh */
@@ -228,12 +230,12 @@ footer nav{display:flex;gap:1.25rem;flex-wrap:wrap}
 <header class="nav" role="banner">
   <div class="wrap">
     <nav class="links" id="links" aria-label="Navigasi utama">
-      <a href="#beranda" aria-current="true">Beranda</a><a href="#tentang">Tentang</a><a href="#pendidikan">Pendidikan</a><a href="#karier">Karier</a><a href="#keahlian">Keahlian</a><a href="#kontak">Kontak</a>
+      <a href="#beranda" aria-current="true">Beranda</a><a href="#tentang">Tentang</a><a href="#keahlian">Keahlian</a><a href="#kontak">Kontak</a>
     </nav>
   </div>
 </header>
 
-<main>
+<div>
   <section id="beranda" class="hero" aria-labelledby="nama">
     <div class="wrap">
       <div class="grid12">
@@ -259,50 +261,48 @@ footer nav{display:flex;gap:1.25rem;flex-wrap:wrap}
       </div>
     </div>
   </section>
-
-  <section id="tentang" class="band rule" aria-labelledby="t-tentang">
-    <div class="wrap two">
-      <div class="l">
-        <div class="head" style="margin-bottom:.5rem"><span class="badge"><svg class="ic"><use href="#i-user"/></svg></span><h2 class="h2" id="t-tentang">Tentang Saya</h2></div>
-        <p class="lead">Saya memiliki latar belakang pengalaman kerja di bidang operasional, layanan pelanggan, kasir, dan administrasi gudang. Pengalaman itu melatih ketelitian data, kecepatan kerja, serta kedisiplinan terhadap prosedur.</p>
-        <p class="lead">Saat ini saya aktif mengembangkan kemampuan di dunia vibe coding dan perancangan antarmuka web (UI/UX), serta mengikuti perkembangan tools AI untuk membantu pembuatan landing page dan efisiensi alur kerja digital.</p>
-      </div>
-      <div class="r">
-        <h3 class="h3">Latar pengalaman</h3>
-        <div class="tags"><span class="pill">Operasional</span><span class="pill">Layanan pelanggan</span><span class="pill">Kasir</span><span class="pill">Administrasi gudang</span></div>
-        <h3 class="h3" style="margin-top:.5rem">Sedang saya dalami</h3>
-        <div class="tags"><span class="pill">Vibe coding</span><span class="pill">UI/UX web</span><span class="pill">Tools AI</span><span class="pill">Landing page</span></div>
-      </div>
-    </div>
-  </section>
-<div class="marquee" aria-hidden="true">
-  <div class="track">
-    <span>Vibe Coding</span><span>UI/UX</span><span>Tools AI</span><span>Landing Page</span>
-    <span>Vibe Coding</span><span>UI/UX</span><span>Tools AI</span><span>Landing Page</span>
-  </div>
-</div>
-
-
-  <section id="pendidikan" class="band egg" aria-labelledby="t-pend">
-    <div class="wrap">
-      <div class="head"><span class="badge"><svg class="ic"><use href="#i-cap"/></svg></span><h2 class="h2" id="t-pend">Pendidikan Terakhir</h2></div>
-      <div class="edu">
-        <span class="yr">2012 - 2015</span>
-        <div><h3 class="h3">SMA Baptis Cengkareng Indah</h3><p class="sub" style="color:var(--black)">Sekolah Menengah Atas</p></div>
+  <section id="tentang" aria-labelledby="t-tentang">
+    <div class="band rule">
+      <div class="wrap two">
+        <div class="l">
+          <div class="head" style="margin-bottom:.5rem"><span class="badge"><svg class="ic"><use href="#i-user"/></svg></span><h2 class="h2" id="t-tentang">Tentang Saya</h2></div>
+          <p class="lead">Saya memiliki latar belakang pengalaman kerja di bidang operasional, layanan pelanggan, kasir, dan administrasi gudang. Pengalaman itu melatih ketelitian data, kecepatan kerja, serta kedisiplinan terhadap prosedur.</p>
+          <p class="lead">Saat ini saya aktif mengembangkan kemampuan di dunia vibe coding dan perancangan antarmuka web (UI/UX), serta mengikuti perkembangan tools AI untuk membantu pembuatan landing page dan efisiensi alur kerja digital.</p>
+        </div>
+        <div class="r">
+          <h3 class="h3">Latar pengalaman</h3>
+          <div class="tags"><span class="pill">Operasional</span><span class="pill">Layanan pelanggan</span><span class="pill">Kasir</span><span class="pill">Administrasi gudang</span></div>
+          <h3 class="h3" style="margin-top:.5rem">Sedang saya dalami</h3>
+          <div class="tags"><span class="pill">Vibe coding</span><span class="pill">UI/UX web</span><span class="pill">Tools AI</span><span class="pill">Landing page</span></div>
+        </div>
       </div>
     </div>
-  </section>
-  
-  <section id="karier" class="band" aria-labelledby="t-karier">
-  <div class="wrap">
-    <div class="head reveal"><span class="badge"><svg class="ic"><use href="#i-brief"/></svg></span><h2 class="h2" id="t-karier">Riwayat Karier</h2></div>
-    <div class="jobs">
-      <article class="job reveal"><span class="badge egg sm"><svg class="ic"><use href="#i-receipt"/></svg></span><div class="txt"><h3 class="h3">Kasir</h3><p class="sub">Foxy Spa PIK Elang Laut</p><span class="pill">Hospitality &amp; Transaksi</span><p class="desc">Menangani proses pembayaran pelanggan, pencatatan laporan transaksi harian, serta menjaga kerapian administrasi kas dan pelayanan front-desk.</p></div></article>
-      <article class="job reveal"><span class="badge egg sm"><svg class="ic"><use href="#i-receipt"/></svg></span><div class="txt"><h3 class="h3">Kasir</h3><p class="sub">Holy Smokes Pik Avenue</p><span class="pill">F&amp;B Service &amp; POS</span><p class="desc">Mengoperasikan sistem kasir (POS) di lingkungan restoran dengan ritme cepat, memastikan ketepatan tagihan, dan koordinasi layanan pelanggan.</p></div></article>
-      <article class="job reveal"><span class="badge egg sm"><svg class="ic"><use href="#i-utensils"/></svg></span><div class="txt"><h3 class="h3">Dishwasher</h3><p class="sub">Song Fa Bak Kut Teh Pik Avenue</p><span class="pill">Kitchen Operations</span><p class="desc">Menjaga kebersihan, sanitasi peralatan dapur dan makan, serta mendukung kelancaran alur operasional tim dapur sesuai standar kebersihan restoran.</p></div></article>
-      <article class="job reveal"><span class="badge egg sm"><svg class="ic"><use href="#i-box"/></svg></span><div class="txt"><h3 class="h3">Warehouse Admin</h3><p class="sub">PT IDexpress Service Solution</p><span class="pill">Logistik &amp; Administrasi</span><p class="desc">Mengelola pencatatan data keluar-masuk paket/barang, rekapitulasi administrasi operasional gudang, serta memastikan akurasi data pengiriman.</p></div></article>
+    <div class="marquee" aria-hidden="true">
+      <div class="track">
+        <span>Vibe Coding</span><span>UI/UX</span><span>Tools AI</span><span>Landing Page</span>
+        <span>Vibe Coding</span><span>UI/UX</span><span>Tools AI</span><span>Landing Page</span>
+      </div>
     </div>
-  </div>
+    <div class="band egg">
+      <div class="wrap">
+        <div class="head"><span class="badge"><svg class="ic"><use href="#i-cap"/></svg></span><h2 class="h2" id="t-pend">Pendidikan Terakhir</h2></div>
+          <div class="edu">
+            <span class="yr">2012 - 2015</span>
+            <div><h3 class="h3">SMA Baptis Cengkareng Indah</h3><p class="sub" style="color:var(--black)">Sekolah Menengah Atas</p></div>
+          </div>
+        </div>
+      </div>
+    <div class="band">
+      <div class="wrap">
+        <div class="head reveal"><span class="badge"><svg class="ic"><use href="#i-brief"/></svg></span><h2 class="h2" id="t-karier">Pengalaman Kerja</h2></div>
+          <div class="jobs">
+            <article class="job reveal"><span class="badge egg sm"><svg class="ic"><use href="#i-receipt"/></svg></span><div class="txt"><h3 class="h3">Kasir</h3><p class="sub">Foxy Spa PIK Elang Laut</p><span class="pill">Hospitality &amp; Transaksi</span><p class="desc">Menangani proses pembayaran pelanggan, pencatatan laporan transaksi harian, serta menjaga kerapian administrasi kas dan pelayanan front-desk.</p></div></article>
+            <article class="job reveal"><span class="badge egg sm"><svg class="ic"><use href="#i-receipt"/></svg></span><div class="txt"><h3 class="h3">Kasir</h3><p class="sub">Holy Smokes Pik Avenue</p><span class="pill">F&amp;B Service &amp; POS</span><p class="desc">Mengoperasikan sistem kasir (POS) di lingkungan restoran dengan ritme cepat, memastikan ketepatan tagihan, dan koordinasi layanan pelanggan.</p></div></article>
+            <article class="job reveal"><span class="badge egg sm"><svg class="ic"><use href="#i-utensils"/></svg></span><div class="txt"><h3 class="h3">Dishwasher</h3><p class="sub">Song Fa Bak Kut Teh Pik Avenue</p><span class="pill">Kitchen Operations</span><p class="desc">Menjaga kebersihan, sanitasi peralatan dapur dan makan, serta mendukung kelancaran alur operasional tim dapur sesuai standar kebersihan restoran.</p></div></article>
+            <article class="job reveal"><span class="badge egg sm"><svg class="ic"><use href="#i-box"/></svg></span><div class="txt"><h3 class="h3">Warehouse Admin</h3><p class="sub">PT IDexpress Service Solution</p><span class="pill">Logistik &amp; Administrasi</span><p class="desc">Mengelola pencatatan data keluar-masuk paket/barang, rekapitulasi administrasi operasional gudang, serta memastikan akurasi data pengiriman.</p></div></article>
+          </div>
+        </div>
+      </div>
   </section>
 
   <section id="keahlian" class="band soft" aria-labelledby="t-skill">
@@ -352,7 +352,7 @@ footer nav{display:flex;gap:1.25rem;flex-wrap:wrap}
 <footer class="on-dark">
   <div class="wrap">
     <p>&copy; 2026 Deri Tri Hartono</p>
-    <nav aria-label="Navigasi footer"><a href="#beranda">Beranda</a><a href="#tentang">Tentang</a><a href="#karier">Karier</a><a href="#keahlian">Keahlian</a><a href="#kontak">Kontak</a></nav>
+    <nav aria-label="Navigasi footer"><a href="#beranda">Beranda</a><a href="#tentang">Tentang</a><a href="#keahlian">Keahlian</a><a href="#kontak">Kontak</a>
   </div>
 </footer>
 
